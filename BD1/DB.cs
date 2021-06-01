@@ -10,7 +10,7 @@ namespace BD
 {
     class DB
     {
-
+        //саси
         SqlConnection connection;
 
         public DB(string Credentials)
