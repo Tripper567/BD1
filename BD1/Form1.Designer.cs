@@ -164,6 +164,8 @@ namespace BD
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -803,6 +805,8 @@ namespace BD
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button19);
+            this.tabPage7.Controls.Add(this.button18);
             this.tabPage7.Controls.Add(this.Телефон_руководителяTB);
             this.tabPage7.Controls.Add(this.ПочтаTB);
             this.tabPage7.Controls.Add(this.Телефон_секретаряTB);
@@ -882,6 +886,7 @@ namespace BD
             this.dataGridViewПреприятия.Name = "dataGridViewПреприятия";
             this.dataGridViewПреприятия.Size = new System.Drawing.Size(775, 202);
             this.dataGridViewПреприятия.TabIndex = 9;
+            this.dataGridViewПреприятия.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewПреприятия_CellContentClick);
             // 
             // button11
             // 
@@ -1020,9 +1025,9 @@ namespace BD
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(428, 71);
+            this.button3.Location = new System.Drawing.Point(286, 36);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 53);
+            this.button3.Size = new System.Drawing.Size(151, 46);
             this.button3.TabIndex = 16;
             this.button3.Text = "заполнить";
             this.button3.UseVisualStyleBackColor = true;
@@ -1539,6 +1544,26 @@ namespace BD
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(291, 141);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(145, 23);
+            this.button18.TabIndex = 16;
+            this.button18.Text = "Удалить";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(466, 141);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(145, 23);
+            this.button19.TabIndex = 17;
+            this.button19.Text = "Редактировать";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1704,6 +1729,8 @@ namespace BD
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button18;
     }
 }
 

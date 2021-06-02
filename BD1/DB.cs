@@ -173,6 +173,14 @@ namespace BD
             connection.Close();
         }
 
+        public void deleteEnterprise(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Предприятия WHERE Код_предприятия = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public void updateYourLits(int id, string name, string inn)
         {
             SqlCommand comment = new SqlCommand($"UPDATE Юридические_лица SET(Название_юр_лица = '{name}', ИНН = '{inn}') WHERE Код_юридического_лица = {id}", connection);
@@ -191,6 +199,14 @@ namespace BD
         public void updatePassport(int id, string surname, string Name, string otchestvo, string series, string num, DateTime dataV)
         {
             SqlCommand comment = new SqlCommand($"UPDATE [Паспортные данные] SET (Фамилия_физ_лица = '{surname}', Имя_физ_лица = '{Name}', Отчество_физ_лица = '{otchestvo}', Серия = '{series}', Номер = '{num}', Дата_выдачи = '{dataV}') WHERE Код_паспортных_данных = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void updateEnterprise(int id, string name, string surname, string Rukname, string otch, string phone, string email, string rukPhone)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Предприятия SET (Наименование_предприятия = '{name}', Фамилия_руководителя = '{surname}', Имя_руководителя = '{Rukname}', Отчество_руководителя = '{otch}', Телефон_секретаря = '{phone}', Почта = '{email}', Телефон_руководителя = '{rukPhone}') WHERE Код_предприятия = {id}", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();

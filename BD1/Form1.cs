@@ -548,6 +548,41 @@ namespace BD
             TableUpdate(); ComboUpdates();
         }
 
+        private void button18_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.deleteEnterprise(tempID);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void dataGridViewПреприятия_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewПреприятия.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tempID = Convert.ToInt32(dataGridViewПреприятия.Rows[e.RowIndex].Cells[0].Value);
+            Наименование_предприятияTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Фамилия_руководителяTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[2].Value.ToString();
+            Имя_руководителяTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[3].Value.ToString();
+            Отчество_руководителяTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[4].Value.ToString();
+            Телефон_секретаряTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[5].Value.ToString();
+            ПочтаTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[6].Value.ToString();
+            Телефон_руководителяTB.Text = dataGridViewПреприятия.Rows[e.RowIndex].Cells[7].Value.ToString();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.updateEnterprise(tempID, Наименование_предприятияTB.Text, Фамилия_руководителяTB.Text, Имя_руководителяTB.Text, Отчество_руководителяTB.Text, Телефон_секретаряTB.Text, ПочтаTB.Text, Телефон_руководителяTB.Text); ;
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
