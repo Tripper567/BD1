@@ -166,6 +166,12 @@ namespace BD
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.sqlEXECBTN = new System.Windows.Forms.Button();
+            this.sqlTB = new System.Windows.Forms.TextBox();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -987,6 +993,8 @@ namespace BD
             // tabPage16
             // 
             this.tabPage16.AutoScroll = true;
+            this.tabPage16.Controls.Add(this.button21);
+            this.tabPage16.Controls.Add(this.button20);
             this.tabPage16.Controls.Add(this.вид_товараCB);
             this.tabPage16.Controls.Add(this.предпритиеCB);
             this.tabPage16.Controls.Add(this.button3);
@@ -1040,6 +1048,7 @@ namespace BD
             this.dataGridViewTest.Name = "dataGridViewTest";
             this.dataGridViewTest.Size = new System.Drawing.Size(774, 185);
             this.dataGridViewTest.TabIndex = 15;
+            this.dataGridViewTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTest_CellContentClick);
             // 
             // наименование_товараTextBox
             // 
@@ -1065,6 +1074,8 @@ namespace BD
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
+            this.tabPage5.Controls.Add(this.button23);
+            this.tabPage5.Controls.Add(this.button22);
             this.tabPage5.Controls.Add(this.button12);
             this.tabPage5.Controls.Add(наименование_видаLabel);
             this.tabPage5.Controls.Add(this.наименование_видаTextBox);
@@ -1102,6 +1113,7 @@ namespace BD
             this.вид_товараDataGridView.ReadOnly = true;
             this.вид_товараDataGridView.Size = new System.Drawing.Size(774, 273);
             this.вид_товараDataGridView.TabIndex = 0;
+            this.вид_товараDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.вид_товараDataGridView_CellContentClick);
             // 
             // tabPage6
             // 
@@ -1431,6 +1443,8 @@ namespace BD
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.sqlTB);
+            this.tabPage12.Controls.Add(this.sqlEXECBTN);
             this.tabPage12.Controls.Add(this.menuStrip1);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
@@ -1563,6 +1577,64 @@ namespace BD
             this.button19.Text = "Редактировать";
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(309, 126);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(151, 46);
+            this.button20.TabIndex = 19;
+            this.button20.Text = "Удалить";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(515, 135);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(151, 46);
+            this.button21.TabIndex = 20;
+            this.button21.Text = "Редактировать";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(206, 65);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(93, 23);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "Удалить";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(330, 65);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(93, 23);
+            this.button23.TabIndex = 7;
+            this.button23.Text = "Редактировать";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // sqlEXECBTN
+            // 
+            this.sqlEXECBTN.Location = new System.Drawing.Point(725, 382);
+            this.sqlEXECBTN.Name = "sqlEXECBTN";
+            this.sqlEXECBTN.Size = new System.Drawing.Size(75, 23);
+            this.sqlEXECBTN.TabIndex = 1;
+            this.sqlEXECBTN.Text = "Выполнить";
+            this.sqlEXECBTN.UseVisualStyleBackColor = true;
+            this.sqlEXECBTN.Click += new System.EventHandler(this.sqlEXECBTN_Click);
+            // 
+            // sqlTB
+            // 
+            this.sqlTB.Location = new System.Drawing.Point(526, 347);
+            this.sqlTB.Multiline = true;
+            this.sqlTB.Name = "sqlTB";
+            this.sqlTB.Size = new System.Drawing.Size(193, 58);
+            this.sqlTB.TabIndex = 2;
             // 
             // Form1
             // 
@@ -1731,6 +1803,12 @@ namespace BD
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TextBox sqlTB;
+        private System.Windows.Forms.Button sqlEXECBTN;
     }
 }
 

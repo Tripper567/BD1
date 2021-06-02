@@ -186,7 +186,7 @@ namespace BD
             юридические_лицаDataGridView.DataSource = dB.ReturnTable("*", "Юридические_лица", null).Tables[0].DefaultView;
             dataGridViewПреприятия.DataSource = dB.ReturnTable("*", "Предприятия", null).Tables[0].DefaultView;
             dataGridViewTest.DataSource = dB.ReturnTable("*", "Товар", null).Tables[0].DefaultView;
-
+            вид_товараDataGridView.DataSource = dB.ReturnTable("*", "Вид_товара", null).Tables[0].DefaultView;
         }
 
         void ComboUpdates()
@@ -581,6 +581,83 @@ namespace BD
                 tempID = -1;
             }
             TableUpdate(); ComboUpdates();
+        }
+
+        private void dataGridViewTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DB db = new DB(Credentials);
+            dataGridViewTest.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_предприятия", "Предприятия", $"WHERE Код_предприятия = {dataGridViewTest.Rows[e.RowIndex].Cells[3].Value.ToString()}"); предпритиеCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_вида", "Вид_товара", $"WHERE Код_вида_товара = {dataGridViewTest.Rows[e.RowIndex].Cells[4].Value.ToString()}"); вид_товараCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            tempID = Convert.ToInt32(dataGridViewTest.Rows[e.RowIndex].Cells[0].Value.ToString());
+            наименование_товараTextBox.Text = dataGridViewTest.Rows[e.RowIndex].Cells[1].Value.ToString();
+            артикулTextBox1.Text = dataGridViewTest.Rows[e.RowIndex].Cells[2].Value.ToString();
+            стоимостьTextBox.Text = dataGridViewTest.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.deleteTovar(tempID); 
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.updateTovar(tempID, наименование_товараTextBox.Text,
+               артикулTextBox1.Text,
+               GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1).ToString(),
+               GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1).ToString(),
+               стоимостьTextBox.Text);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.deleteVidTov(tempID);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.updateVidTov(tempID, наименование_видаTextBox.Text);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void вид_товараDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            физические_лицаDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tempID = Convert.ToInt32(вид_товараDataGridView.Rows[e.RowIndex].Cells[0].Value);
+            наименование_видаTextBox.Text = вид_товараDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void sqlEXECBTN_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            try
+            {
+                db.executeQuery(sqlTB.Text);
+            }
+            catch { }
         }
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

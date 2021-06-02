@@ -181,6 +181,21 @@ namespace BD
             connection.Close();
         }
 
+        public void deleteTovar(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Товар WHERE Код_товара = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void deleteVidTov(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Вид_товара WHERE Код_вида_товара = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
         public void updateYourLits(int id, string name, string inn)
         {
             SqlCommand comment = new SqlCommand($"UPDATE Юридические_лица SET(Название_юр_лица = '{name}', ИНН = '{inn}') WHERE Код_юридического_лица = {id}", connection);
@@ -207,6 +222,30 @@ namespace BD
         public void updateEnterprise(int id, string name, string surname, string Rukname, string otch, string phone, string email, string rukPhone)
         {
             SqlCommand comment = new SqlCommand($"UPDATE Предприятия SET (Наименование_предприятия = '{name}', Фамилия_руководителя = '{surname}', Имя_руководителя = '{Rukname}', Отчество_руководителя = '{otch}', Телефон_секретаря = '{phone}', Почта = '{email}', Телефон_руководителя = '{rukPhone}') WHERE Код_предприятия = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void updateTovar(int id, string name, string Article, string FactoryCode, string Kind, string Value)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Товар SET (Наименование_товара = '{name}', Артикул = '{Article}', Код_предприятия = '{FactoryCode}', Код_вида_товара = '{Kind}', Стоимость = '{Value}') WHERE Код_товара = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void updateVidTov(int id, string name)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Вид_товара SET (Наименование_вида = '{name}') WHERE Код_вида_товара = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void executeQuery(string query)
+        {
+            SqlCommand comment = new SqlCommand(query, connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
