@@ -182,7 +182,7 @@ namespace BD
         {
             DB dB = new DB(Credentials);
             заказыDataGridView.DataSource = dB.ReturnTable("*", "Заказы", null).Tables[0].DefaultView;
-            физические_лицаDataGridView.DataSource = dB.ReturnTable("*", "Физические_лица", null).Tables[0].DefaultView;
+            физические_лицаDataGridView.DataSource = dB.ReturnTable("*", "[Паспортные данные], Физические_лица", null).Tables[0].DefaultView;
             юридические_лицаDataGridView.DataSource = dB.ReturnTable("*", "Юридические_лица", null).Tables[0].DefaultView;
             dataGridViewПреприятия.DataSource = dB.ReturnTable("*", "Предприятия", null).Tables[0].DefaultView;
             dataGridViewTest.DataSource = dB.ReturnTable("*", "Товар", null).Tables[0].DefaultView;
@@ -416,10 +416,9 @@ namespace BD
             DB db = new DB(Credentials);
             db.AddOrders(
                наименование_заказаTextBox.Text,
-                код_физического_лицаTextBox1.Text,
-                код_юридического_лицаTextBox1.Text,
+                GetDirCode("[Паспортные данные]",код_физического_лицаCB.SelectedItem.ToString(), 1).ToString(),
+                GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
                 dateTimePicker1.Value.Date
-
                 );
             TableUpdate(); ComboUpdates();
         }
@@ -435,7 +434,6 @@ namespace BD
                 Телефон_секретаряTB.Text,
                ПочтаTB.Text,
                Телефон_руководителяTB.Text
-
                 );
            
 
@@ -473,12 +471,96 @@ namespace BD
         int tempID = - 1;
         private void заказыDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            DB db = new DB(Credentials);
             заказыDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tempID = Convert.ToInt32(заказыDataGridView.Rows[e.RowIndex].Cells[0].Value);
             наименование_заказаTextBox.Text = заказыDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            код_физического_лицаTextBox1.Text = заказыDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            код_юридического_лицаTextBox1
-            dateTimePicker1
+            dataGridViewListReturner.DataSource = db.ReturnTable("Фамилия_физ_лица", "[Паспортные_данные]", $"WHERE Код_паспортных_данных = {заказыDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString()}"); код_физического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnTable("Название_юр_лица", "Юридические_лица", $"WHERE Код_юридического_лица = {заказыDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString()}"); код_юридического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(заказыDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if(tempID != -1) { db.editZakaz(наименование_заказаTextBox.Text, код_физического_лицаCB.SelectedItem.ToString(), код_юридического_лицаCB.SelectedItem.ToString(), dateTimePicker1.Value, tempID); tempID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void код_физического_лицаCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void удалить_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if(tempPassCode != -1 && tempFizCode != -1)
+            {
+                db.deleteFizLic(tempFizCode);
+                db.deletePass(tempPassCode);
+                tempPassCode = -1; tempFizCode = -1;
+            }
+            TableUpdate(); ComboUpdates();
+
+        }
+        int tempPassCode = -1, tempFizCode = -1;
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempPassCode != -1 && tempFizCode != -1)
+            {
+                db.updateFizLitso(tempID, иннTB.Text);
+                db.updatePassport(tempPassCode, фамилияtextBox2.Text, имяtextBox3.Text, отчествоtextBox4.Text, серияtextBox5.Text, номерtextBox6.Text, dateTimePicker2.Value);
+                tempPassCode = -1; tempFizCode = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials); 
+            if (tempID != -1)
+            {
+                db.deleteYourLits(tempID);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void юридические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            юридические_лицаDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tempID = Convert.ToInt32(юридические_лицаDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            название_юр_лицаTextBox.Text = юридические_лицаDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            иННTextBox.Text = юридические_лицаDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.updateYourLits(tempID, название_юр_лицаTextBox.Text, иННTextBox.Text);
+                tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            физические_лицаDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tempPassCode = Convert.ToInt32(физические_лицаDataGridView.Rows[e.RowIndex].Cells[0].Value);
+            tempFizCode = Convert.ToInt32(физические_лицаDataGridView.Rows[e.RowIndex].Cells[7].Value);
+            фамилияtextBox2.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            имяtextBox3.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            отчествоtextBox4.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            серияtextBox5.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+            номерtextBox6.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            dateTimePicker2.Value = Convert.ToDateTime(физические_лицаDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString());
+            иннTB.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
     }
 }

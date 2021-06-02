@@ -66,11 +66,15 @@ namespace BD
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.код_юридического_лицаCB = new System.Windows.Forms.ComboBox();
+            this.код_физического_лицаCB = new System.Windows.Forms.ComboBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.наименование_заказаTextBox = new System.Windows.Forms.TextBox();
             this.заказыDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.иннTB = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.фамилияtextBox2 = new System.Windows.Forms.TextBox();
             this.имяtextBox3 = new System.Windows.Forms.TextBox();
@@ -85,6 +89,21 @@ namespace BD
             this.иННTextBox = new System.Windows.Forms.TextBox();
             this.юридические_лицаDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.Телефон_руководителяTB = new System.Windows.Forms.TextBox();
+            this.ПочтаTB = new System.Windows.Forms.TextBox();
+            this.Телефон_секретаряTB = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dataGridViewПреприятия = new System.Windows.Forms.DataGridView();
+            this.button11 = new System.Windows.Forms.Button();
+            this.Отчество_руководителяTB = new System.Windows.Forms.TextBox();
+            this.Имя_руководителяTB = new System.Windows.Forms.TextBox();
+            this.Фамилия_руководителяTB = new System.Windows.Forms.TextBox();
+            this.Наименование_предприятияTB = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -97,6 +116,7 @@ namespace BD
             this.артикулTextBox1 = new System.Windows.Forms.TextBox();
             this.стоимостьTextBox = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.наименование_видаTextBox = new System.Windows.Forms.TextBox();
             this.вид_товараDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -139,26 +159,11 @@ namespace BD
             this.динамикаИзмененияСтоимостиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Наименование_предприятияTB = new System.Windows.Forms.TextBox();
-            this.Фамилия_руководителяTB = new System.Windows.Forms.TextBox();
-            this.Имя_руководителяTB = new System.Windows.Forms.TextBox();
-            this.Отчество_руководителяTB = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dataGridViewПреприятия = new System.Windows.Forms.DataGridView();
-            this.Телефон_руководителяTB = new System.Windows.Forms.TextBox();
-            this.ПочтаTB = new System.Windows.Forms.TextBox();
-            this.Телефон_секретаряTB = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.иннTB = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.код_физического_лицаCB = new System.Windows.Forms.ComboBox();
-            this.код_юридического_лицаCB = new System.Windows.Forms.ComboBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.deleteFizL = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -202,6 +207,7 @@ namespace BD
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.юридические_лицаDataGridView)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewПреприятия)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage16.SuspendLayout();
@@ -224,7 +230,6 @@ namespace BD
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewПреприятия)).BeginInit();
             this.SuspendLayout();
             // 
             // наименование_заказаLabel
@@ -515,6 +520,16 @@ namespace BD
             label7.TabIndex = 27;
             label7.Text = "Дата выдачи:";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new System.Drawing.Point(272, 22);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(31, 13);
+            label17.TabIndex = 30;
+            label17.Text = "ИНН";
+            label17.Click += new System.EventHandler(this.label17_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -555,6 +570,7 @@ namespace BD
             // tabPage15
             // 
             this.tabPage15.AutoScroll = true;
+            this.tabPage15.Controls.Add(this.button14);
             this.tabPage15.Controls.Add(this.код_юридического_лицаCB);
             this.tabPage15.Controls.Add(this.код_физического_лицаCB);
             this.tabPage15.Controls.Add(this.button13);
@@ -574,13 +590,40 @@ namespace BD
             this.tabPage15.Text = "Заказы";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // код_юридического_лицаCB
+            // 
+            this.код_юридического_лицаCB.FormattingEnabled = true;
+            this.код_юридического_лицаCB.Location = new System.Drawing.Point(157, 65);
+            this.код_юридического_лицаCB.Name = "код_юридического_лицаCB";
+            this.код_юридического_лицаCB.Size = new System.Drawing.Size(121, 21);
+            this.код_юридического_лицаCB.TabIndex = 22;
+            // 
+            // код_физического_лицаCB
+            // 
+            this.код_физического_лицаCB.FormattingEnabled = true;
+            this.код_физического_лицаCB.Location = new System.Drawing.Point(157, 38);
+            this.код_физического_лицаCB.Name = "код_физического_лицаCB";
+            this.код_физического_лицаCB.Size = new System.Drawing.Size(121, 21);
+            this.код_физического_лицаCB.TabIndex = 21;
+            this.код_физического_лицаCB.SelectedIndexChanged += new System.EventHandler(this.код_физического_лицаCB_SelectedIndexChanged);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(218, 128);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 20;
+            this.button13.Text = "Удалить";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(109, 128);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 19;
-            this.button10.Text = "button10";
+            this.button10.Text = "Добавить";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -611,6 +654,8 @@ namespace BD
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Controls.Add(this.deleteFizL);
             this.tabPage3.Controls.Add(label17);
             this.tabPage3.Controls.Add(this.иннTB);
             this.tabPage3.Controls.Add(this.dateTimePicker2);
@@ -634,6 +679,13 @@ namespace BD
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Физические лица";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // иннTB
+            // 
+            this.иннTB.Location = new System.Drawing.Point(344, 19);
+            this.иннTB.Name = "иннTB";
+            this.иннTB.Size = new System.Drawing.Size(100, 20);
+            this.иннTB.TabIndex = 29;
             // 
             // dateTimePicker2
             // 
@@ -694,10 +746,13 @@ namespace BD
             this.физические_лицаDataGridView.Name = "физические_лицаDataGridView";
             this.физические_лицаDataGridView.Size = new System.Drawing.Size(775, 161);
             this.физические_лицаDataGridView.TabIndex = 6;
+            this.физические_лицаDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.физические_лицаDataGridView_CellContentClick);
             // 
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.button17);
+            this.tabPage4.Controls.Add(this.button16);
             this.tabPage4.Controls.Add(this.button9);
             this.tabPage4.Controls.Add(название_юр_лицаLabel);
             this.tabPage4.Controls.Add(this.название_юр_лицаTextBox);
@@ -744,6 +799,7 @@ namespace BD
             this.юридические_лицаDataGridView.ReadOnly = true;
             this.юридические_лицаDataGridView.Size = new System.Drawing.Size(742, 188);
             this.юридические_лицаDataGridView.TabIndex = 0;
+            this.юридические_лицаDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.юридические_лицаDataGridView_CellContentClick);
             // 
             // tabPage7
             // 
@@ -770,6 +826,127 @@ namespace BD
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Предприятия";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // Телефон_руководителяTB
+            // 
+            this.Телефон_руководителяTB.Location = new System.Drawing.Point(532, 68);
+            this.Телефон_руководителяTB.Name = "Телефон_руководителяTB";
+            this.Телефон_руководителяTB.Size = new System.Drawing.Size(125, 20);
+            this.Телефон_руководителяTB.TabIndex = 15;
+            // 
+            // ПочтаTB
+            // 
+            this.ПочтаTB.Location = new System.Drawing.Point(532, 41);
+            this.ПочтаTB.Name = "ПочтаTB";
+            this.ПочтаTB.Size = new System.Drawing.Size(125, 20);
+            this.ПочтаTB.TabIndex = 14;
+            // 
+            // Телефон_секретаряTB
+            // 
+            this.Телефон_секретаряTB.Location = new System.Drawing.Point(532, 15);
+            this.Телефон_секретаряTB.Name = "Телефон_секретаряTB";
+            this.Телефон_секретаряTB.Size = new System.Drawing.Size(125, 20);
+            this.Телефон_секретаряTB.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(372, 68);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Телефон руководителя";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(372, 43);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Почта";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(372, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Телефон секретаря";
+            // 
+            // dataGridViewПреприятия
+            // 
+            this.dataGridViewПреприятия.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewПреприятия.Location = new System.Drawing.Point(6, 170);
+            this.dataGridViewПреприятия.Name = "dataGridViewПреприятия";
+            this.dataGridViewПреприятия.Size = new System.Drawing.Size(775, 202);
+            this.dataGridViewПреприятия.TabIndex = 9;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(99, 141);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(145, 23);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // Отчество_руководителяTB
+            // 
+            this.Отчество_руководителяTB.Location = new System.Drawing.Point(200, 97);
+            this.Отчество_руководителяTB.Name = "Отчество_руководителяTB";
+            this.Отчество_руководителяTB.Size = new System.Drawing.Size(120, 20);
+            this.Отчество_руководителяTB.TabIndex = 7;
+            // 
+            // Имя_руководителяTB
+            // 
+            this.Имя_руководителяTB.Location = new System.Drawing.Point(200, 70);
+            this.Имя_руководителяTB.Name = "Имя_руководителяTB";
+            this.Имя_руководителяTB.Size = new System.Drawing.Size(120, 20);
+            this.Имя_руководителяTB.TabIndex = 6;
+            // 
+            // Фамилия_руководителяTB
+            // 
+            this.Фамилия_руководителяTB.Location = new System.Drawing.Point(200, 41);
+            this.Фамилия_руководителяTB.Name = "Фамилия_руководителяTB";
+            this.Фамилия_руководителяTB.Size = new System.Drawing.Size(120, 20);
+            this.Фамилия_руководителяTB.TabIndex = 5;
+            // 
+            // Наименование_предприятияTB
+            // 
+            this.Наименование_предприятияTB.Location = new System.Drawing.Point(200, 12);
+            this.Наименование_предприятияTB.Name = "Наименование_предприятияTB";
+            this.Наименование_предприятияTB.Size = new System.Drawing.Size(120, 20);
+            this.Наименование_предприятияTB.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 97);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Отчество руководителя";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Имя руководителя";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Фамилия руководителя";
             // 
             // label1
             // 
@@ -894,6 +1071,16 @@ namespace BD
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Вид товара";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(85, 65);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(93, 23);
+            this.button12.TabIndex = 5;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
             // наименование_видаTextBox
             // 
@@ -1302,179 +1489,55 @@ namespace BD
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
             // 
-            // label8
+            // button14
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 44);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Фамилия руководителя";
+            this.button14.Location = new System.Drawing.Point(332, 128);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 23;
+            this.button14.Text = "Изменить";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // label9
+            // deleteFizL
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 70);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Имя руководителя";
+            this.deleteFizL.Location = new System.Drawing.Point(228, 179);
+            this.deleteFizL.Name = "deleteFizL";
+            this.deleteFizL.Size = new System.Drawing.Size(75, 23);
+            this.deleteFizL.TabIndex = 31;
+            this.deleteFizL.Text = "Удалить";
+            this.deleteFizL.UseVisualStyleBackColor = true;
+            this.deleteFizL.Click += new System.EventHandler(this.удалить_Click);
             // 
-            // label10
+            // button15
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 97);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Отчество руководителя";
+            this.button15.Location = new System.Drawing.Point(327, 179);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 32;
+            this.button15.Text = "Изменить";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // Наименование_предприятияTB
+            // button16
             // 
-            this.Наименование_предприятияTB.Location = new System.Drawing.Point(200, 12);
-            this.Наименование_предприятияTB.Name = "Наименование_предприятияTB";
-            this.Наименование_предприятияTB.Size = new System.Drawing.Size(120, 20);
-            this.Наименование_предприятияTB.TabIndex = 4;
+            this.button16.Location = new System.Drawing.Point(249, 104);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 23);
+            this.button16.TabIndex = 8;
+            this.button16.Text = "Удалить";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // Фамилия_руководителяTB
+            // button17
             // 
-            this.Фамилия_руководителяTB.Location = new System.Drawing.Point(200, 41);
-            this.Фамилия_руководителяTB.Name = "Фамилия_руководителяTB";
-            this.Фамилия_руководителяTB.Size = new System.Drawing.Size(120, 20);
-            this.Фамилия_руководителяTB.TabIndex = 5;
-            // 
-            // Имя_руководителяTB
-            // 
-            this.Имя_руководителяTB.Location = new System.Drawing.Point(200, 70);
-            this.Имя_руководителяTB.Name = "Имя_руководителяTB";
-            this.Имя_руководителяTB.Size = new System.Drawing.Size(120, 20);
-            this.Имя_руководителяTB.TabIndex = 6;
-            // 
-            // Отчество_руководителяTB
-            // 
-            this.Отчество_руководителяTB.Location = new System.Drawing.Point(200, 97);
-            this.Отчество_руководителяTB.Name = "Отчество_руководителяTB";
-            this.Отчество_руководителяTB.Size = new System.Drawing.Size(120, 20);
-            this.Отчество_руководителяTB.TabIndex = 7;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(99, 141);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(145, 23);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // dataGridViewПреприятия
-            // 
-            this.dataGridViewПреприятия.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewПреприятия.Location = new System.Drawing.Point(6, 170);
-            this.dataGridViewПреприятия.Name = "dataGridViewПреприятия";
-            this.dataGridViewПреприятия.Size = new System.Drawing.Size(775, 202);
-            this.dataGridViewПреприятия.TabIndex = 9;
-            // 
-            // Телефон_руководителяTB
-            // 
-            this.Телефон_руководителяTB.Location = new System.Drawing.Point(532, 68);
-            this.Телефон_руководителяTB.Name = "Телефон_руководителяTB";
-            this.Телефон_руководителяTB.Size = new System.Drawing.Size(125, 20);
-            this.Телефон_руководителяTB.TabIndex = 15;
-            // 
-            // ПочтаTB
-            // 
-            this.ПочтаTB.Location = new System.Drawing.Point(532, 41);
-            this.ПочтаTB.Name = "ПочтаTB";
-            this.ПочтаTB.Size = new System.Drawing.Size(125, 20);
-            this.ПочтаTB.TabIndex = 14;
-            // 
-            // Телефон_секретаряTB
-            // 
-            this.Телефон_секретаряTB.Location = new System.Drawing.Point(532, 15);
-            this.Телефон_секретаряTB.Name = "Телефон_секретаряTB";
-            this.Телефон_секретаряTB.Size = new System.Drawing.Size(125, 20);
-            this.Телефон_секретаряTB.TabIndex = 13;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(372, 68);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 13);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Телефон руководителя";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(372, 43);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Почта";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(372, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 13);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Телефон секретаря";
-            // 
-            // иннTB
-            // 
-            this.иннTB.Location = new System.Drawing.Point(344, 19);
-            this.иннTB.Name = "иннTB";
-            this.иннTB.Size = new System.Drawing.Size(100, 20);
-            this.иннTB.TabIndex = 29;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new System.Drawing.Point(272, 22);
-            label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(31, 13);
-            label17.TabIndex = 30;
-            label17.Text = "ИНН";
-            label17.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(85, 65);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(93, 23);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click_1);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(218, 128);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 20;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // код_физического_лицаCB
-            // 
-            this.код_физического_лицаCB.FormattingEnabled = true;
-            this.код_физического_лицаCB.Location = new System.Drawing.Point(157, 38);
-            this.код_физического_лицаCB.Name = "код_физического_лицаCB";
-            this.код_физического_лицаCB.Size = new System.Drawing.Size(121, 21);
-            this.код_физического_лицаCB.TabIndex = 21;
-            // 
-            // код_юридического_лицаCB
-            // 
-            this.код_юридического_лицаCB.FormattingEnabled = true;
-            this.код_юридического_лицаCB.Location = new System.Drawing.Point(157, 65);
-            this.код_юридического_лицаCB.Name = "код_юридического_лицаCB";
-            this.код_юридического_лицаCB.Size = new System.Drawing.Size(121, 21);
-            this.код_юридического_лицаCB.TabIndex = 22;
+            this.button17.Location = new System.Drawing.Point(389, 104);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(120, 23);
+            this.button17.TabIndex = 9;
+            this.button17.Text = "Изменить";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // Form1
             // 
@@ -1500,6 +1563,7 @@ namespace BD
             ((System.ComponentModel.ISupportInitialize)(this.юридические_лицаDataGridView)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewПреприятия)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
@@ -1532,7 +1596,6 @@ namespace BD
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewПреприятия)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1636,6 +1699,11 @@ namespace BD
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.ComboBox код_юридического_лицаCB;
         private System.Windows.Forms.ComboBox код_физического_лицаCB;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button deleteFizL;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button16;
     }
 }
 

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -10,7 +6,7 @@ namespace BD
 {
     class DB
     {
-        //саси
+     
         SqlConnection connection;
 
         public DB(string Credentials)
@@ -121,9 +117,6 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
-
-
-
         public void AddPassAndFace(int a, int b)
         {
             SqlCommand comment = new SqlCommand($"INSERT INTO [Паспортные_данные и Физ_лица] (Код_паспортных_данных, Код_физического_лица) VALUES ( {a}, {b})", connection);
@@ -142,15 +135,65 @@ namespace BD
 
         public void DeleteZak(int id)
         {
-            SqlCommand comment = new SqlCommand($"DELETE FROM  Заказы where Код_заказа = {id}", connection);
+            SqlCommand comment = new SqlCommand($"DELETE FROM Заказы where Код_заказа = {id}", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
         }
 
+        public void editZakaz(string name, string codeF, string codeLegal, DateTime dataZ, int id)
+        {
+            SqlCommand comment = new SqlCommand($"Update Заказы SET (Наименование_заказа = '{name}', код_физического_лица = {codeF}, код_юридического_лица = {codeLegal}, Дата_заказа = '{dataZ}') WHERE Код_заказа = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
 
+        public void deleteFizLic(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Физические_лица WHERE Код_физического_лица = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
 
+        public void deletePass(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM [Паспортные данные] WHERE Код_паспортных_данных = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
 
+        public void deleteYourLits(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Юридические_лица WHERE Код_юридического_лица = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
 
+        public void updateYourLits(int id, string name, string inn)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Юридические_лица SET(Название_юр_лица = '{name}', ИНН = '{inn}') WHERE Код_юридического_лица = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void updateFizLitso(int id, string Name)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Физические_лица SET (ИНН = '{Name}') WHERE Код_физического_лица = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void updatePassport(int id, string surname, string Name, string otchestvo, string series, string num, DateTime dataV)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE [Паспортные данные] SET (Фамилия_физ_лица = '{surname}', Имя_физ_лица = '{Name}', Отчество_физ_лица = '{otchestvo}', Серия = '{series}', Номер = '{num}', Дата_выдачи = '{dataV}') WHERE Код_паспортных_данных = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
