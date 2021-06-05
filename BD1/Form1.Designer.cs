@@ -66,6 +66,7 @@ namespace BD
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.button14 = new System.Windows.Forms.Button();
             this.код_юридического_лицаCB = new System.Windows.Forms.ComboBox();
             this.код_физического_лицаCB = new System.Windows.Forms.ComboBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -74,6 +75,8 @@ namespace BD
             this.наименование_заказаTextBox = new System.Windows.Forms.TextBox();
             this.заказыDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.deleteFizL = new System.Windows.Forms.Button();
             this.иннTB = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.фамилияtextBox2 = new System.Windows.Forms.TextBox();
@@ -84,11 +87,15 @@ namespace BD
             this.button8 = new System.Windows.Forms.Button();
             this.физические_лицаDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.название_юр_лицаTextBox = new System.Windows.Forms.TextBox();
             this.иННTextBox = new System.Windows.Forms.TextBox();
             this.юридические_лицаDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
             this.Телефон_руководителяTB = new System.Windows.Forms.TextBox();
             this.ПочтаTB = new System.Windows.Forms.TextBox();
             this.Телефон_секретаряTB = new System.Windows.Forms.TextBox();
@@ -108,6 +115,8 @@ namespace BD
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.вид_товараCB = new System.Windows.Forms.ComboBox();
             this.предпритиеCB = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -116,6 +125,8 @@ namespace BD
             this.артикулTextBox1 = new System.Windows.Forms.TextBox();
             this.стоимостьTextBox = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.наименование_видаTextBox = new System.Windows.Forms.TextBox();
             this.вид_товараDataGridView = new System.Windows.Forms.DataGridView();
@@ -152,6 +163,8 @@ namespace BD
             this.корпусTextBox = new System.Windows.Forms.TextBox();
             this.квартираTextBox = new System.Windows.Forms.TextBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.sqlTB = new System.Windows.Forms.TextBox();
+            this.sqlEXECBTN = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,19 +172,13 @@ namespace BD
             this.динамикаИзмененияСтоимостиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button14 = new System.Windows.Forms.Button();
-            this.deleteFizL = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.sqlEXECBTN = new System.Windows.Forms.Button();
-            this.sqlTB = new System.Windows.Forms.TextBox();
+            this.PriceListDTP = new System.Windows.Forms.DateTimePicker();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.addPriceListDG = new System.Windows.Forms.DataGridView();
+            this.PriceListCB = new System.Windows.Forms.ComboBox();
+            this.ItemCB = new System.Windows.Forms.ComboBox();
+            this.Add = new System.Windows.Forms.Button();
+            this.orderPriceListCB = new System.Windows.Forms.ComboBox();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -238,6 +245,8 @@ namespace BD
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).BeginInit();
             this.SuspendLayout();
             // 
             // наименование_заказаLabel
@@ -545,7 +554,8 @@ namespace BD
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage12);
-            this.tabControl1.Location = new System.Drawing.Point(-7, 7);
+            this.tabControl1.Controls.Add(this.tabPage18);
+            this.tabControl1.Location = new System.Drawing.Point(2, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(814, 437);
@@ -578,6 +588,7 @@ namespace BD
             // tabPage15
             // 
             this.tabPage15.AutoScroll = true;
+            this.tabPage15.Controls.Add(this.orderPriceListCB);
             this.tabPage15.Controls.Add(this.button14);
             this.tabPage15.Controls.Add(this.код_юридического_лицаCB);
             this.tabPage15.Controls.Add(this.код_физического_лицаCB);
@@ -597,6 +608,16 @@ namespace BD
             this.tabPage15.TabIndex = 3;
             this.tabPage15.Text = "Заказы";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(332, 128);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 23;
+            this.button14.Text = "Изменить";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // код_юридического_лицаCB
             // 
@@ -688,6 +709,26 @@ namespace BD
             this.tabPage3.Text = "Физические лица";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(327, 179);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 32;
+            this.button15.Text = "Изменить";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // deleteFizL
+            // 
+            this.deleteFizL.Location = new System.Drawing.Point(228, 179);
+            this.deleteFizL.Name = "deleteFizL";
+            this.deleteFizL.Size = new System.Drawing.Size(75, 23);
+            this.deleteFizL.TabIndex = 31;
+            this.deleteFizL.Text = "Удалить";
+            this.deleteFizL.UseVisualStyleBackColor = true;
+            this.deleteFizL.Click += new System.EventHandler(this.удалить_Click);
+            // 
             // иннTB
             // 
             this.иннTB.Location = new System.Drawing.Point(344, 19);
@@ -775,6 +816,26 @@ namespace BD
             this.tabPage4.Text = "Юридические лица";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(389, 104);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(120, 23);
+            this.button17.TabIndex = 9;
+            this.button17.Text = "Изменить";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(249, 104);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 23);
+            this.button16.TabIndex = 8;
+            this.button16.Text = "Удалить";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(87, 104);
@@ -836,6 +897,26 @@ namespace BD
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Предприятия";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(466, 141);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(145, 23);
+            this.button19.TabIndex = 17;
+            this.button19.Text = "Редактировать";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(291, 141);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(145, 23);
+            this.button18.TabIndex = 16;
+            this.button18.Text = "Удалить";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // Телефон_руководителяTB
             // 
@@ -1015,6 +1096,26 @@ namespace BD
             this.tabPage16.Text = "Товар";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(515, 135);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(151, 46);
+            this.button21.TabIndex = 20;
+            this.button21.Text = "Редактировать";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(309, 126);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(151, 46);
+            this.button20.TabIndex = 19;
+            this.button20.Text = "Удалить";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // вид_товараCB
             // 
             this.вид_товараCB.FormattingEnabled = true;
@@ -1088,6 +1189,26 @@ namespace BD
             this.tabPage5.Text = "Вид товара";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(330, 65);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(93, 23);
+            this.button23.TabIndex = 7;
+            this.button23.Text = "Редактировать";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(206, 65);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(93, 23);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "Удалить";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(85, 65);
@@ -1138,6 +1259,7 @@ namespace BD
             // tabPage8
             // 
             this.tabPage8.AutoScroll = true;
+            this.tabPage8.Controls.Add(this.PriceListDTP);
             this.tabPage8.Controls.Add(this.button4);
             this.tabPage8.Controls.Add(this.dataGridView1);
             this.tabPage8.Controls.Add(наименование_прайс_листаLabel);
@@ -1454,6 +1576,24 @@ namespace BD
             this.tabPage12.Text = "Запросы";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // sqlTB
+            // 
+            this.sqlTB.Location = new System.Drawing.Point(526, 347);
+            this.sqlTB.Multiline = true;
+            this.sqlTB.Name = "sqlTB";
+            this.sqlTB.Size = new System.Drawing.Size(193, 58);
+            this.sqlTB.TabIndex = 2;
+            // 
+            // sqlEXECBTN
+            // 
+            this.sqlEXECBTN.Location = new System.Drawing.Point(725, 382);
+            this.sqlEXECBTN.Name = "sqlEXECBTN";
+            this.sqlEXECBTN.Size = new System.Drawing.Size(75, 23);
+            this.sqlEXECBTN.TabIndex = 1;
+            this.sqlEXECBTN.Text = "Выполнить";
+            this.sqlEXECBTN.UseVisualStyleBackColor = true;
+            this.sqlEXECBTN.Click += new System.EventHandler(this.sqlEXECBTN_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1508,133 +1648,72 @@ namespace BD
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
             // 
-            // button14
+            // PriceListDTP
             // 
-            this.button14.Location = new System.Drawing.Point(332, 128);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 23;
-            this.button14.Text = "Изменить";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.PriceListDTP.Location = new System.Drawing.Point(184, 106);
+            this.PriceListDTP.Name = "PriceListDTP";
+            this.PriceListDTP.Size = new System.Drawing.Size(100, 20);
+            this.PriceListDTP.TabIndex = 9;
             // 
-            // deleteFizL
+            // tabPage18
             // 
-            this.deleteFizL.Location = new System.Drawing.Point(228, 179);
-            this.deleteFizL.Name = "deleteFizL";
-            this.deleteFizL.Size = new System.Drawing.Size(75, 23);
-            this.deleteFizL.TabIndex = 31;
-            this.deleteFizL.Text = "Удалить";
-            this.deleteFizL.UseVisualStyleBackColor = true;
-            this.deleteFizL.Click += new System.EventHandler(this.удалить_Click);
+            this.tabPage18.Controls.Add(this.Add);
+            this.tabPage18.Controls.Add(this.ItemCB);
+            this.tabPage18.Controls.Add(this.PriceListCB);
+            this.tabPage18.Controls.Add(this.addPriceListDG);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(806, 411);
+            this.tabPage18.TabIndex = 5;
+            this.tabPage18.Text = "Заполнение_прайс_листа";
+            this.tabPage18.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // addPriceListDG
             // 
-            this.button15.Location = new System.Drawing.Point(327, 179);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 32;
-            this.button15.Text = "Изменить";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.addPriceListDG.AllowUserToAddRows = false;
+            this.addPriceListDG.AllowUserToDeleteRows = false;
+            this.addPriceListDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addPriceListDG.Location = new System.Drawing.Point(342, 6);
+            this.addPriceListDG.Name = "addPriceListDG";
+            this.addPriceListDG.ReadOnly = true;
+            this.addPriceListDG.Size = new System.Drawing.Size(458, 399);
+            this.addPriceListDG.TabIndex = 0;
             // 
-            // button16
+            // PriceListCB
             // 
-            this.button16.Location = new System.Drawing.Point(249, 104);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(120, 23);
-            this.button16.TabIndex = 8;
-            this.button16.Text = "Удалить";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.PriceListCB.FormattingEnabled = true;
+            this.PriceListCB.Location = new System.Drawing.Point(6, 6);
+            this.PriceListCB.Name = "PriceListCB";
+            this.PriceListCB.Size = new System.Drawing.Size(121, 21);
+            this.PriceListCB.TabIndex = 1;
+            
             // 
-            // button17
+            // ItemCB
             // 
-            this.button17.Location = new System.Drawing.Point(389, 104);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(120, 23);
-            this.button17.TabIndex = 9;
-            this.button17.Text = "Изменить";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.ItemCB.FormattingEnabled = true;
+            this.ItemCB.Location = new System.Drawing.Point(6, 33);
+            this.ItemCB.Name = "ItemCB";
+            this.ItemCB.Size = new System.Drawing.Size(121, 21);
+            this.ItemCB.TabIndex = 2;
             // 
-            // button18
+            // Add
             // 
-            this.button18.Location = new System.Drawing.Point(291, 141);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(145, 23);
-            this.button18.TabIndex = 16;
-            this.button18.Text = "Удалить";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.Add.Location = new System.Drawing.Point(6, 60);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(121, 23);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // button19
+            // orderPriceListCB
             // 
-            this.button19.Location = new System.Drawing.Point(466, 141);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(145, 23);
-            this.button19.TabIndex = 17;
-            this.button19.Text = "Редактировать";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(309, 126);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(151, 46);
-            this.button20.TabIndex = 19;
-            this.button20.Text = "Удалить";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(515, 135);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(151, 46);
-            this.button21.TabIndex = 20;
-            this.button21.Text = "Редактировать";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(206, 65);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(93, 23);
-            this.button22.TabIndex = 6;
-            this.button22.Text = "Удалить";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(330, 65);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(93, 23);
-            this.button23.TabIndex = 7;
-            this.button23.Text = "Редактировать";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // sqlEXECBTN
-            // 
-            this.sqlEXECBTN.Location = new System.Drawing.Point(725, 382);
-            this.sqlEXECBTN.Name = "sqlEXECBTN";
-            this.sqlEXECBTN.Size = new System.Drawing.Size(75, 23);
-            this.sqlEXECBTN.TabIndex = 1;
-            this.sqlEXECBTN.Text = "Выполнить";
-            this.sqlEXECBTN.UseVisualStyleBackColor = true;
-            this.sqlEXECBTN.Click += new System.EventHandler(this.sqlEXECBTN_Click);
-            // 
-            // sqlTB
-            // 
-            this.sqlTB.Location = new System.Drawing.Point(526, 347);
-            this.sqlTB.Multiline = true;
-            this.sqlTB.Name = "sqlTB";
-            this.sqlTB.Size = new System.Drawing.Size(193, 58);
-            this.sqlTB.TabIndex = 2;
+            this.orderPriceListCB.FormattingEnabled = true;
+            this.orderPriceListCB.Location = new System.Drawing.Point(355, 15);
+            this.orderPriceListCB.Name = "orderPriceListCB";
+            this.orderPriceListCB.Size = new System.Drawing.Size(121, 21);
+            this.orderPriceListCB.TabIndex = 24;
             // 
             // Form1
             // 
@@ -1693,6 +1772,8 @@ namespace BD
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1809,6 +1890,13 @@ namespace BD
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.TextBox sqlTB;
         private System.Windows.Forms.Button sqlEXECBTN;
+        private System.Windows.Forms.DateTimePicker PriceListDTP;
+        private System.Windows.Forms.TabPage tabPage18;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.ComboBox ItemCB;
+        private System.Windows.Forms.ComboBox PriceListCB;
+        private System.Windows.Forms.DataGridView addPriceListDG;
+        private System.Windows.Forms.ComboBox orderPriceListCB;
     }
 }
 

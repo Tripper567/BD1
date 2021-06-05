@@ -28,71 +28,7 @@ namespace BD
             return -1;
         }
 
-        private void заказыBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            switch (tabControl1.SelectedIndex)
-            {
-                /*case 2:
-                    if (номер_арендатора_юрTextBox.Text != "" && номер_арендатора_физTextBox.Text != "")
-                    {
-                        Masseng formMass = new Masseng();
-                        formMass.Show();
-
-                        //MessageBox.Show("Для заполнения необходимо выбрать одно из полей!\nНомер арендатора юр или Номер арендатора физ");
-                        break;
-                    }
-
-
-                    this.adresBindingSource.EndEdit();
-                    adresTableAdapter.Update(dataSet1);
-                    break;
-
-                case 0:
-                    //SqlCommand command = new SqlCommand($"INSERT INTO Organization (Код_организации, Имя организации, Кр_имя_организации, Контактные_телефоны, Email) VALUES ('{код_организацииTextBox1}', '{имя_организацииTextBox}', '{кр_имя_организацииTextBox}', '{контактные_телефоныTextBox}', '{emailTextBox}')");
-                    this.organizationBindingSource.EndEdit();
-                    organizationTableAdapter.Update(dataSet1);
-                    break;
-
-               /* case 1:
-
-                    switch (tabControl3.SelectedIndex)
-                    {
-                        case 0:
-                            this.fizLitsoBindingSource.EndEdit();
-                            fizLitsoTableAdapter.Update(dataSet1);
-                            break;
-                        case 1:
-                            // this.tipYurLitsBindingSource.EndEdit();
-                            // tipYurLitsTableAdapter.Update(dataSet1);
-                            this.yurLitsoBindingSource.EndEdit();
-                            yurLitsoTableAdapter.Update(dataSet1);
-
-                            break;
-                    }
-                    break;*/
-
-                /*case 3:
-                    //this.arendPlatBindingSource.EndEdit(); arendPlatTableAdapter.Update(dataSet1);
-                  if (код_физического_лицаTextBox2.Text != "" && код_юридического_лицаTextBox2.Text != "")
-                    {
-                        MessageBox.Show("Для заполнения необходимо выбрать одно из полей!\nФизическое лицо или Юридическое лицо ");
-                        код_физического_лицаTextBox2.Text = ""; код_юридического_лицаTextBox2.Text = "";
-                        //MessageBox.Show("Для заполнения необходимо выбрать одно из полей!\nНомер арендатора юр или Номер арендатора физ");
-                        break;
-                    }
-                    this.улицаBindingSource.EndEdit(); this.улицаTableAdapter.Update(dataSet1);
-                    break;
-               /* case 4:
-                    this.characterPomeschBindingSource.EndEdit();
-                    characterPomeschTableAdapter.Update(dataSet1);
-                    break;
-               */
-            }
-            // this.заказыBindingSource.EndEdit();
-            // this.tableAdapterManager.UpdateAll(this.dataSet1); */
-
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -113,49 +49,6 @@ namespace BD
         private void населенный_пунктDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            switch (tabControl1.SelectedIndex)
-            {
-                case 2:
-                //this.tip_UlizBindingSource.AddNew();
-                //this.ulizaBindingSource.AddNew();
-                /* this.adresBindingSource.AddNew();
-                 break;
-
-             case 0:
-                 this.organizationBindingSource.AddNew();
-
-                 break;
-
-             case 1:
-
-                 switch (tabControl3.SelectedIndex)
-                 {
-                     case 0:
-                         this.fizLitsoBindingSource.AddNew();
-                         break;
-                     case 1:
-                         this.yurLitsoBindingSource.AddNew();
-                         //this.tipYurLitsBindingSource.AddNew();
-                         break;
-                 }
-                 break;*/
-/*
-                case 3:
-                    this.тип_улицыBindingSource.AddNew();
-                    //this.arendPlatBindingSource.AddNew();
-                    this.тип_населенного_пунктаBindingSource.AddNew();
-                    this.улицаBindingSource.AddNew();
-                    this.населенный_пунктBindingSource.AddNew();
-                    this.адресBindingSource.AddNew();
-                    break;*/
-                case 4:
-                    //   this.characterPomeschBindingSource.AddNew();
-                    break;
-            }
         }
 
         private void tabPage9_Click(object sender, EventArgs e)
@@ -187,6 +80,7 @@ namespace BD
             dataGridViewПреприятия.DataSource = dB.ReturnTable("*", "Предприятия", null).Tables[0].DefaultView;
             dataGridViewTest.DataSource = dB.ReturnTable("*", "Товар", null).Tables[0].DefaultView;
             вид_товараDataGridView.DataSource = dB.ReturnTable("*", "Вид_товара", null).Tables[0].DefaultView;
+            addPriceListDG.DataSource = dB.PriceListItems().Tables[0].DefaultView;
         }
 
         void ComboUpdates()
@@ -199,8 +93,12 @@ namespace BD
             comboBox6.Items.Clear();
             comboBox7.Items.Clear();
             comboBox8.Items.Clear();
+            PriceListCB.Items.Clear();
+            ItemCB.Items.Clear();
+            orderPriceListCB.Items.Clear();
+            код_физического_лицаCB.Items.Clear();
+            код_юридического_лицаCB.Items.Clear();
 
-           
             foreach (string i in BufferListUpdate(0))
             {
                 comboBox3.Items.Add(i);
@@ -219,10 +117,12 @@ namespace BD
             }
             foreach (string i in BufferListUpdate(4))
             {
+                код_физического_лицаCB.Items.Add(i);
                 comboBox7.Items.Add(i);
             }
             foreach (string i in BufferListUpdate(5))
             {
+                код_юридического_лицаCB.Items.Add(i);
                 comboBox8.Items.Add(i);
             }
             foreach (string i in BufferListUpdate(6))
@@ -232,6 +132,15 @@ namespace BD
             foreach (string i in BufferListUpdate(7))
             {
                 вид_товараCB.Items.Add(i);
+            }
+            foreach(string i in BufferListUpdate(8))
+            {
+                PriceListCB.Items.Add(i);
+                orderPriceListCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(9))
+            {
+                ItemCB.Items.Add(i);
             }
 
         }
@@ -271,7 +180,7 @@ namespace BD
                     }
                     break;
                 case 4: // Заполнение физического лица
-                    dataGridViewListReturner.DataSource = database.ReturnTable("Фамилия_физ_лица", "Физические_лица,[Паспортные данные]", "Where Код_физического_лица = Код_паспортных_данных").Tables[0].DefaultView;
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Фамилия_физ_лица", "Физические_лица,[Паспортные данные], [Паспортные_данные и Физ_лица]", null).Tables[0].DefaultView;
                     for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
                     {
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
@@ -298,7 +207,20 @@ namespace BD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
-
+                case 8: // Заполнение прайс листа
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Наименование_прайс_листа", "Прайс_лист", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 9: // Заполнение товара
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Наименование_товара", "Товар", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
 
 
             }
@@ -323,7 +245,8 @@ namespace BD
             DB dB = new DB(Credentials);
             dB.AddPlist(
                наименование_прайс_листаTextBox.Text,
-               артикулTextBox.Text);
+               артикулTextBox.Text,
+               PriceListDTP.Value);
             TableUpdate();
         }
 
@@ -384,20 +307,16 @@ namespace BD
         private void button8_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            db.AddPasport(
-                фамилияtextBox2.Text,
-                имяtextBox3.Text,
-                отчествоtextBox4.Text,
-                серияtextBox5.Text,
-                номерtextBox6.Text,
-                dateTimePicker2.Value.Date
-               // DateTime dat =this.dateTimePicker2.Value.Date
-                );
-            int a = GetDirCode("[Паспортные данные]", фамилияtextBox2.Text, 1);
-
-            db.AddFizFace(иннTB.Text);
-            int b = GetDirCode("Физические_лица", иннTB.Text, 1);
-            db.AddPassAndFace(a, b);
+            try
+            {
+                db.addPassprot(фамилияtextBox2.Text, имяtextBox3.Text, отчествоtextBox4.Text, серияtextBox5.Text, номерtextBox6.Text, dateTimePicker2.Value);
+                int passID = GetDirCode("[Паспортные данные]", фамилияtextBox2.Text, 1);
+                db.AddFizFace(иннTB.Text);
+                int FizFacaceid = GetDirCode("Физические_лица", иннTB.Text, 1);
+                db.AddFizFaceAndPass(FizFacaceid, passID);
+            }
+            catch { }
+            ComboUpdates(); TableUpdate();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -414,11 +333,15 @@ namespace BD
         private void button10_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
+            int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
+            dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
+            string fizFaceID = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
             db.AddOrders(
                наименование_заказаTextBox.Text,
-                GetDirCode("[Паспортные данные]",код_физического_лицаCB.SelectedItem.ToString(), 1).ToString(),
+                fizFaceID,
                 GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
-                dateTimePicker1.Value.Date
+                dateTimePicker1.Value,
+                GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                 );
             TableUpdate(); ComboUpdates();
         }
@@ -435,9 +358,6 @@ namespace BD
                ПочтаTB.Text,
                Телефон_руководителяTB.Text
                 );
-           
-
-        
             TableUpdate(); ComboUpdates();
         }
 
@@ -475,15 +395,16 @@ namespace BD
             заказыDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tempID = Convert.ToInt32(заказыDataGridView.Rows[e.RowIndex].Cells[0].Value);
             наименование_заказаTextBox.Text = заказыDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            dataGridViewListReturner.DataSource = db.ReturnTable("Фамилия_физ_лица", "[Паспортные_данные]", $"WHERE Код_паспортных_данных = {заказыDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString()}"); код_физического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
-            dataGridViewListReturner.DataSource = db.ReturnTable("Название_юр_лица", "Юридические_лица", $"WHERE Код_юридического_лица = {заказыDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString()}"); код_юридического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnFizFaceLastName(Convert.ToInt32(заказыDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString())).Tables[0].DefaultView; код_физического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnTable("Название_юр_лица", "Юридические_лица", $"WHERE Код_юридического_лица = {заказыDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString()}").Tables[0].DefaultView; код_юридического_лицаCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
             dateTimePicker1.Value = Convert.ToDateTime(заказыDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            if(tempID != -1) { db.editZakaz(наименование_заказаTextBox.Text, код_физического_лицаCB.SelectedItem.ToString(), код_юридического_лицаCB.SelectedItem.ToString(), dateTimePicker1.Value, tempID); tempID = -1; }
+            int priceListCode = GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1);
+            if(tempID != -1) { db.editZakaz(наименование_заказаTextBox.Text, код_физического_лицаCB.SelectedItem.ToString(), код_юридического_лицаCB.SelectedItem.ToString(), dateTimePicker1.Value, tempID, priceListCode); ; tempID = -1; }
             TableUpdate(); ComboUpdates();
         }
 
@@ -587,8 +508,9 @@ namespace BD
         {
             DB db = new DB(Credentials);
             dataGridViewTest.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_предприятия", "Предприятия", $"WHERE Код_предприятия = {dataGridViewTest.Rows[e.RowIndex].Cells[3].Value.ToString()}"); предпритиеCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
-            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_вида", "Вид_товара", $"WHERE Код_вида_товара = {dataGridViewTest.Rows[e.RowIndex].Cells[4].Value.ToString()}"); вид_товараCB.SelectedItem = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_предприятия", "Предприятия", $"WHERE Код_предприятия = {dataGridViewTest.Rows[e.RowIndex].Cells[3].Value.ToString()}").Tables[0].DefaultView; 
+            предпритиеCB.SelectedText = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            dataGridViewListReturner.DataSource = db.ReturnTable("Наименование_вида", "Вид_товара", $"WHERE Код_вида_товара = {dataGridViewTest.Rows[e.RowIndex].Cells[4].Value.ToString()}").Tables[0].DefaultView; вид_товараCB.SelectedText = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
             tempID = Convert.ToInt32(dataGridViewTest.Rows[e.RowIndex].Cells[0].Value.ToString());
             наименование_товараTextBox.Text = dataGridViewTest.Rows[e.RowIndex].Cells[1].Value.ToString();
             артикулTextBox1.Text = dataGridViewTest.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -613,8 +535,8 @@ namespace BD
             {
                 db.updateTovar(tempID, наименование_товараTextBox.Text,
                артикулTextBox1.Text,
-               GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1).ToString(),
-               GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1).ToString(),
+               (GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1)).ToString(),
+               (GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1)).ToString(),
                стоимостьTextBox.Text);
                 tempID = -1;
             }
@@ -660,9 +582,24 @@ namespace BD
             catch { }
         }
 
+        private void Add_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            try
+            {
+                int PriceListID = GetDirCode("Прайс_лист", PriceListCB.SelectedItem.ToString(), 1);
+                int itemID = GetDirCode("Товар", ItemCB.SelectedItem.ToString(), 1);
+                db.addItemToPriceList(PriceListID, itemID);
+            }
+            catch { }
+            TableUpdate(); ComboUpdates();
+        }
+
+        
+       
+
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             физические_лицаDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tempPassCode = Convert.ToInt32(физические_лицаDataGridView.Rows[e.RowIndex].Cells[0].Value);
             tempFizCode = Convert.ToInt32(физические_лицаDataGridView.Rows[e.RowIndex].Cells[7].Value);
