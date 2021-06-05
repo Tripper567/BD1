@@ -1689,12 +1689,13 @@ namespace BD
             // 
             // button31
             // 
-            this.button31.Location = new System.Drawing.Point(92, 293);
+            this.button31.Location = new System.Drawing.Point(92, 297);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(142, 51);
             this.button31.TabIndex = 8;
             this.button31.Text = "Редактировать";
             this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button30
             // 
@@ -1704,6 +1705,7 @@ namespace BD
             this.button30.TabIndex = 7;
             this.button30.Text = "Удалить";
             this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // button5
             // 

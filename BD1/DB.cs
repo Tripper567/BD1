@@ -294,5 +294,22 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void deleteU(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Улица WHERE Код_улицы = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void updateU(string Name, int Type, int Key)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Улица SET Название = '{Name}', Код_типа_улицы = {Type} WHERE Код_улицы = {Key}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
     }
 }
