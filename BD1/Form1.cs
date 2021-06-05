@@ -90,6 +90,8 @@ namespace BD
                 case 3: dataGridView2.DataSource = dB.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
                 case 4: dataGridView2.DataSource = dB.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
             }
+            список_товараDataGridView.DataSource = dB.ReturnTable("Наименование_прайс_листа, Наименование_товара", "[Список товара], Прайс_лист, Товар", "WHERE [Список товара].Код_товара = Товар.Код_товара AND [Список товара].Код_прайс_листа = Прайс_лист.Код_прайс_листа").Tables[0].DefaultView;
+
         }
 
         void ComboUpdates()
