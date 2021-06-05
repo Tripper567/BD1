@@ -66,6 +66,7 @@ namespace BD
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.orderPriceListCB = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
             this.код_юридического_лицаCB = new System.Windows.Forms.ComboBox();
             this.код_физического_лицаCB = new System.Windows.Forms.ComboBox();
@@ -133,6 +134,7 @@ namespace BD
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.список_товараDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.PriceListDTP = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.наименование_прайс_листаTextBox = new System.Windows.Forms.TextBox();
@@ -170,15 +172,13 @@ namespace BD
             this.списокТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.динамикаИзмененияСтоимостиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.Add = new System.Windows.Forms.Button();
+            this.ItemCB = new System.Windows.Forms.ComboBox();
+            this.PriceListCB = new System.Windows.Forms.ComboBox();
+            this.addPriceListDG = new System.Windows.Forms.DataGridView();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.PriceListDTP = new System.Windows.Forms.DateTimePicker();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.addPriceListDG = new System.Windows.Forms.DataGridView();
-            this.PriceListCB = new System.Windows.Forms.ComboBox();
-            this.ItemCB = new System.Windows.Forms.ComboBox();
-            this.Add = new System.Windows.Forms.Button();
-            this.orderPriceListCB = new System.Windows.Forms.ComboBox();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -243,10 +243,10 @@ namespace BD
             this.tabPage17.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // наименование_заказаLabel
@@ -560,6 +560,7 @@ namespace BD
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(814, 437);
             this.tabControl1.TabIndex = 3;
+
             // 
             // tabPage1
             // 
@@ -608,6 +609,14 @@ namespace BD
             this.tabPage15.TabIndex = 3;
             this.tabPage15.Text = "Заказы";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // orderPriceListCB
+            // 
+            this.orderPriceListCB.FormattingEnabled = true;
+            this.orderPriceListCB.Location = new System.Drawing.Point(355, 15);
+            this.orderPriceListCB.Name = "orderPriceListCB";
+            this.orderPriceListCB.Size = new System.Drawing.Size(121, 21);
+            this.orderPriceListCB.TabIndex = 24;
             // 
             // button14
             // 
@@ -1274,6 +1283,13 @@ namespace BD
             this.tabPage8.Text = "Прайс-лист";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // PriceListDTP
+            // 
+            this.PriceListDTP.Location = new System.Drawing.Point(184, 106);
+            this.PriceListDTP.Name = "PriceListDTP";
+            this.PriceListDTP.Size = new System.Drawing.Size(100, 20);
+            this.PriceListDTP.TabIndex = 9;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(618, 127);
@@ -1632,6 +1648,57 @@ namespace BD
             this.динамикаИзмененияСтоимостиToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.динамикаИзмененияСтоимостиToolStripMenuItem.Text = "Динамика изменения стоимости";
             // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.Add);
+            this.tabPage18.Controls.Add(this.ItemCB);
+            this.tabPage18.Controls.Add(this.PriceListCB);
+            this.tabPage18.Controls.Add(this.addPriceListDG);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(806, 411);
+            this.tabPage18.TabIndex = 5;
+            this.tabPage18.Text = "Заполнение_прайс_листа";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(6, 60);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(121, 23);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // ItemCB
+            // 
+            this.ItemCB.FormattingEnabled = true;
+            this.ItemCB.Location = new System.Drawing.Point(6, 33);
+            this.ItemCB.Name = "ItemCB";
+            this.ItemCB.Size = new System.Drawing.Size(121, 21);
+            this.ItemCB.TabIndex = 2;
+            // 
+            // PriceListCB
+            // 
+            this.PriceListCB.FormattingEnabled = true;
+            this.PriceListCB.Location = new System.Drawing.Point(6, 6);
+            this.PriceListCB.Name = "PriceListCB";
+            this.PriceListCB.Size = new System.Drawing.Size(121, 21);
+            this.PriceListCB.TabIndex = 1;
+            // 
+            // addPriceListDG
+            // 
+            this.addPriceListDG.AllowUserToAddRows = false;
+            this.addPriceListDG.AllowUserToDeleteRows = false;
+            this.addPriceListDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addPriceListDG.Location = new System.Drawing.Point(342, 6);
+            this.addPriceListDG.Name = "addPriceListDG";
+            this.addPriceListDG.ReadOnly = true;
+            this.addPriceListDG.Size = new System.Drawing.Size(458, 399);
+            this.addPriceListDG.TabIndex = 0;
+            // 
             // dataGridViewListReturner
             // 
             this.dataGridViewListReturner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1647,73 +1714,6 @@ namespace BD
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
-            // 
-            // PriceListDTP
-            // 
-            this.PriceListDTP.Location = new System.Drawing.Point(184, 106);
-            this.PriceListDTP.Name = "PriceListDTP";
-            this.PriceListDTP.Size = new System.Drawing.Size(100, 20);
-            this.PriceListDTP.TabIndex = 9;
-            // 
-            // tabPage18
-            // 
-            this.tabPage18.Controls.Add(this.Add);
-            this.tabPage18.Controls.Add(this.ItemCB);
-            this.tabPage18.Controls.Add(this.PriceListCB);
-            this.tabPage18.Controls.Add(this.addPriceListDG);
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(806, 411);
-            this.tabPage18.TabIndex = 5;
-            this.tabPage18.Text = "Заполнение_прайс_листа";
-            this.tabPage18.UseVisualStyleBackColor = true;
-            // 
-            // addPriceListDG
-            // 
-            this.addPriceListDG.AllowUserToAddRows = false;
-            this.addPriceListDG.AllowUserToDeleteRows = false;
-            this.addPriceListDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.addPriceListDG.Location = new System.Drawing.Point(342, 6);
-            this.addPriceListDG.Name = "addPriceListDG";
-            this.addPriceListDG.ReadOnly = true;
-            this.addPriceListDG.Size = new System.Drawing.Size(458, 399);
-            this.addPriceListDG.TabIndex = 0;
-            // 
-            // PriceListCB
-            // 
-            this.PriceListCB.FormattingEnabled = true;
-            this.PriceListCB.Location = new System.Drawing.Point(6, 6);
-            this.PriceListCB.Name = "PriceListCB";
-            this.PriceListCB.Size = new System.Drawing.Size(121, 21);
-            this.PriceListCB.TabIndex = 1;
-            
-            // 
-            // ItemCB
-            // 
-            this.ItemCB.FormattingEnabled = true;
-            this.ItemCB.Location = new System.Drawing.Point(6, 33);
-            this.ItemCB.Name = "ItemCB";
-            this.ItemCB.Size = new System.Drawing.Size(121, 21);
-            this.ItemCB.TabIndex = 2;
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(6, 60);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(121, 23);
-            this.Add.TabIndex = 3;
-            this.Add.Text = "Добавить";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // orderPriceListCB
-            // 
-            this.orderPriceListCB.FormattingEnabled = true;
-            this.orderPriceListCB.Location = new System.Drawing.Point(355, 15);
-            this.orderPriceListCB.Name = "orderPriceListCB";
-            this.orderPriceListCB.Size = new System.Drawing.Size(121, 21);
-            this.orderPriceListCB.TabIndex = 24;
             // 
             // Form1
             // 
@@ -1770,10 +1770,10 @@ namespace BD
             this.tabPage12.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }

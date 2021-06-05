@@ -81,6 +81,7 @@ namespace BD
             dataGridViewTest.DataSource = dB.ReturnTable("*", "Товар", null).Tables[0].DefaultView;
             вид_товараDataGridView.DataSource = dB.ReturnTable("*", "Вид_товара", null).Tables[0].DefaultView;
             addPriceListDG.DataSource = dB.PriceListItems().Tables[0].DefaultView;
+            dataGridView1.DataSource = dB.ReturnTable("*", "Прайс_лист", null).Tables[0].DefaultView;
         }
 
         void ComboUpdates()
@@ -600,7 +601,6 @@ namespace BD
         }
 
         
-       
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
