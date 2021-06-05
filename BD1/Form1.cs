@@ -658,7 +658,7 @@ namespace BD
         private void button31_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[1].Value));
+            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
             TableUpdate(); ComboUpdates();
         }
 
@@ -675,5 +675,30 @@ namespace BD
             dateTimePicker2.Value = Convert.ToDateTime(физические_лицаDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString());
             иннTB.Text = физические_лицаDataGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
+
+        private void buttonZap1_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            gridZapros1.DataSource = db.ReturnTable(
+                "(([Паспортные данные].Фамилия_физ_лица, [Паспортные данные].Имя_физ_лица, [Паспортные данные].Отчества_физ_лица) OR Юридические_лица.Название_юр_лица), Товар.Наименование_товара as НаимТовара, Товар.Количество as Количество",
+                "Заказы, Товар, Физические_Лица, Юридические_Лица, [Паспортные_данные и Физ_лица], [Паспортные данные], [Товары и заказы]",
+                "WHERE [Товары и заказы].Код_товара = Товар.Код_товара " +
+                "AND [Товары и заказы].Код_заказа = Заказы.Код_заказа " +
+                "AND (Заказы.код_физического_лица = Физические_лица.Код_физического_лица OR Заказы.код_юридического_лица = Юридические_лица.Код_юридического_лица)").Tables[0].DefaultView;
+        }
+
+        string GetSQLFormatDate(DateTime Date)
+        {
+            string Temp = string.Empty;
+            foreach (char i in Date.ToString("yyyy/MM/dd"))
+            {
+                if (i != '.')
+                {
+                    Temp += i;
+                }
+            }
+            return Temp;
+        }
+
     }
 }
