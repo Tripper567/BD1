@@ -1589,6 +1589,7 @@ namespace BD
             this.button27.TabIndex = 6;
             this.button27.Text = "Редактировать";
             this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // Delete_TypeUbutton26
             // 

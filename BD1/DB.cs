@@ -286,5 +286,13 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void updateTypeU(string Type, int Key)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Тип_улицы SET Название_типа_улицы = '{Type}' WHERE Код_типа_улицы = {Key}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
