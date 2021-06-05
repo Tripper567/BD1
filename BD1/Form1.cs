@@ -288,7 +288,10 @@ namespace BD
         {
             DB dB = new DB(Credentials);
             dB.AddStreet(
-               названиеTextBox.Text);
+               названиеTextBox.Text,
+               GetDirCode("Тип_улицы",$"{comboBox3.SelectedItem.ToString()}",1)
+               );
+            
 
             TableUpdate(); ComboUpdates();
         }
@@ -297,7 +300,10 @@ namespace BD
         {
             DB dB = new DB(Credentials);
             dB.AddLocality(
-               названиеTextBox1.Text);
+               названиеTextBox1.Text,
+               GetDirCode("Тип_населенного_пункта", $"{comboBox4.SelectedItem.ToString()}", 1)
+               );
+
 
             TableUpdate(); ComboUpdates();
         }
@@ -621,6 +627,13 @@ namespace BD
                 case 3: dataGridView2.DataSource = db.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
                 case 4: dataGridView2.DataSource = db.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
             }
+        }
+
+        private void Delete_TypeUbutton26_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1) { db.DeleteTypeU(tempID); tempID = -1; }
+            TableUpdate(); ComboUpdates();
         }
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

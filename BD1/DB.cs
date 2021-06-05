@@ -70,17 +70,17 @@ namespace BD
         }
 
 
-        public void AddStreet(string Name)
+        public void AddStreet(string Name,int typeStr)
         {
-            SqlCommand comment = new SqlCommand($"INSERT INTO Улица ( Название) VALUES ( '{Name}' )", connection);
+            SqlCommand comment = new SqlCommand($"INSERT INTO Улица ( Название,Код_типа_улицы) VALUES ( '{Name}', {typeStr}  )", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
         }
 
-        public void AddLocality(string Name)
+        public void AddLocality(string Name, int typeLocality)
         {
-            SqlCommand comment = new SqlCommand($"INSERT INTO [Населенный пункт] (Название) VALUES ( '{Name}' )", connection);
+            SqlCommand comment = new SqlCommand($"INSERT INTO [Населенный пункт] (Название,Код_типа_нас_пункта) VALUES ( '{Name}',{typeLocality})", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
@@ -148,6 +148,14 @@ namespace BD
         public void AddFizFaceAndPass(int faceID, int passID)
         {
             SqlCommand comment = new SqlCommand($"INSERT INTO [Паспортные_данные и Физ_лица] (Код_паспортных_данных, Код_физического_лица) VALUES ( '{passID}', '{faceID}')", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void DeleteTypeU(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Тип_улицы where Код_типа_улицы = {id}", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
