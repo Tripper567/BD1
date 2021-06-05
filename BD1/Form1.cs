@@ -84,11 +84,11 @@ namespace BD
             dataGridView1.DataSource = dB.ReturnTable("*", "Прайс_лист", null).Tables[0].DefaultView;
             switch (tabControl4.SelectedIndex)
             {
-                case 0: dataGridView2.DataSource = dB.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
-                case 1: dataGridView2.DataSource = dB.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
-                case 2: dataGridView2.DataSource = dB.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
-                case 3: dataGridView2.DataSource = dB.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
-                case 4: dataGridView2.DataSource = dB.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
+                case 0: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
+                case 1: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+                case 2: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
+                case 3: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
+                case 4: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
             }
             список_товараDataGridView.DataSource = dB.ReturnTable("Наименование_прайс_листа, Наименование_товара", "[Список товара], Прайс_лист, Товар", "WHERE [Список товара].Код_товара = Товар.Код_товара AND [Список товара].Код_прайс_листа = Прайс_лист.Код_прайс_листа").Tables[0].DefaultView;
 
@@ -621,19 +621,24 @@ namespace BD
             DB db = new DB(Credentials);
             switch (tabControl4.SelectedIndex) 
             {
-                case 0: dataGridView2.DataSource = db.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
-                case 1: dataGridView2.DataSource = db.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
-                case 2: dataGridView2.DataSource = db.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
-                case 3: dataGridView2.DataSource = db.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
-                case 4: dataGridView2.DataSource = db.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
+                case 0: dataGridViewTypeU.DataSource = db.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
+                case 1: dataGridViewTypeU.DataSource = db.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+                case 2: dataGridViewTypeU.DataSource = db.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
+                case 3: dataGridViewTypeU.DataSource = db.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
+                case 4: dataGridViewTypeU.DataSource = db.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
             }
         }
 
         private void Delete_TypeUbutton26_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            if (tempID != -1) { db.DeleteTypeU(tempID); tempID = -1; }
+            db.DeleteTypeU(Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
             TableUpdate(); ComboUpdates();
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

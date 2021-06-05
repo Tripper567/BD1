@@ -132,6 +132,7 @@ namespace BD
             this.артикулTextBox1 = new System.Windows.Forms.TextBox();
             this.стоимостьTextBox = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -139,30 +140,51 @@ namespace BD
             this.вид_товараDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.список_товараDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.Add = new System.Windows.Forms.Button();
+            this.ItemCB = new System.Windows.Forms.ComboBox();
+            this.PriceListCB = new System.Windows.Forms.ComboBox();
+            this.addPriceListDG = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.PriceListDTP = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.наименование_прайс_листаTextBox = new System.Windows.Forms.TextBox();
             this.артикулTextBox = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTypeU = new System.Windows.Forms.DataGridView();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.button27 = new System.Windows.Forms.Button();
+            this.Delete_TypeUbutton26 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.название_типа_улицыTextBox = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.название_типа_нас_пунктаTextBox = new System.Windows.Forms.TextBox();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.названиеTextBox = new System.Windows.Forms.TextBox();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.названиеTextBox1 = new System.Windows.Forms.TextBox();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -178,30 +200,8 @@ namespace BD
             this.списокТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.динамикаИзмененияСтоимостиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.Add = new System.Windows.Forms.Button();
-            this.ItemCB = new System.Windows.Forms.ComboBox();
-            this.PriceListCB = new System.Windows.Forms.ComboBox();
-            this.addPriceListDG = new System.Windows.Forms.DataGridView();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.Delete_TypeUbutton26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -254,10 +254,12 @@ namespace BD
             ((System.ComponentModel.ISupportInitialize)(this.вид_товараDataGridView)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.список_товараDataGridView)).BeginInit();
+            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTypeU)).BeginInit();
             this.tabControl4.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage11.SuspendLayout();
@@ -266,8 +268,6 @@ namespace BD
             this.tabPage17.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.tabPage18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -1286,6 +1286,16 @@ namespace BD
             this.tabPage5.Text = "Вид товара";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(495, 18);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(191, 18);
+            this.label21.TabIndex = 34;
+            this.label21.Text = "Сведения о виде товар";
+            // 
             // button23
             // 
             this.button23.Location = new System.Drawing.Point(542, 277);
@@ -1353,6 +1363,87 @@ namespace BD
             this.список_товараDataGridView.Size = new System.Drawing.Size(774, 369);
             this.список_товараDataGridView.TabIndex = 0;
             // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.button37);
+            this.tabPage18.Controls.Add(this.button36);
+            this.tabPage18.Controls.Add(this.label23);
+            this.tabPage18.Controls.Add(this.Add);
+            this.tabPage18.Controls.Add(this.ItemCB);
+            this.tabPage18.Controls.Add(this.PriceListCB);
+            this.tabPage18.Controls.Add(this.addPriceListDG);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(806, 411);
+            this.tabPage18.TabIndex = 5;
+            this.tabPage18.Text = "Заполнение Прайс-листа";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // button37
+            // 
+            this.button37.Location = new System.Drawing.Point(106, 282);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(130, 46);
+            this.button37.TabIndex = 6;
+            this.button37.Text = "Изменить";
+            this.button37.UseVisualStyleBackColor = true;
+            // 
+            // button36
+            // 
+            this.button36.Location = new System.Drawing.Point(106, 201);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(130, 46);
+            this.button36.TabIndex = 5;
+            this.button36.Text = "Удалить";
+            this.button36.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 40);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(148, 13);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Наименование прайс листа";
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(106, 122);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(130, 46);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // ItemCB
+            // 
+            this.ItemCB.FormattingEnabled = true;
+            this.ItemCB.Location = new System.Drawing.Point(180, 64);
+            this.ItemCB.Name = "ItemCB";
+            this.ItemCB.Size = new System.Drawing.Size(121, 21);
+            this.ItemCB.TabIndex = 2;
+            // 
+            // PriceListCB
+            // 
+            this.PriceListCB.FormattingEnabled = true;
+            this.PriceListCB.Location = new System.Drawing.Point(180, 37);
+            this.PriceListCB.Name = "PriceListCB";
+            this.PriceListCB.Size = new System.Drawing.Size(121, 21);
+            this.PriceListCB.TabIndex = 1;
+            // 
+            // addPriceListDG
+            // 
+            this.addPriceListDG.AllowUserToAddRows = false;
+            this.addPriceListDG.AllowUserToDeleteRows = false;
+            this.addPriceListDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addPriceListDG.Location = new System.Drawing.Point(342, 6);
+            this.addPriceListDG.Name = "addPriceListDG";
+            this.addPriceListDG.ReadOnly = true;
+            this.addPriceListDG.Size = new System.Drawing.Size(458, 399);
+            this.addPriceListDG.TabIndex = 0;
+            // 
             // tabPage8
             // 
             this.tabPage8.AutoScroll = true;
@@ -1373,6 +1464,33 @@ namespace BD
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Прайс-лист";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(112, 315);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(107, 46);
+            this.button25.TabIndex = 12;
+            this.button25.Text = "Редактировать";
+            this.button25.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(112, 238);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(107, 46);
+            this.button24.TabIndex = 11;
+            this.button24.Text = "Удалить";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(17, 126);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(149, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Дата создания прайс-листа";
             // 
             // PriceListDTP
             // 
@@ -1416,7 +1534,7 @@ namespace BD
             // tabPage9
             // 
             this.tabPage9.AutoScroll = true;
-            this.tabPage9.Controls.Add(this.dataGridView2);
+            this.tabPage9.Controls.Add(this.dataGridViewTypeU);
             this.tabPage9.Controls.Add(this.tabControl4);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
@@ -1426,13 +1544,13 @@ namespace BD
             this.tabPage9.Text = "Адрес";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridViewTypeU
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(366, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(432, 384);
-            this.dataGridView2.TabIndex = 1;
+            this.dataGridViewTypeU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTypeU.Location = new System.Drawing.Point(366, 21);
+            this.dataGridViewTypeU.Name = "dataGridViewTypeU";
+            this.dataGridViewTypeU.Size = new System.Drawing.Size(432, 384);
+            this.dataGridViewTypeU.TabIndex = 1;
             // 
             // tabControl4
             // 
@@ -1462,6 +1580,25 @@ namespace BD
             this.tabPage10.TabIndex = 0;
             this.tabPage10.Text = "Тип улицы";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(95, 284);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(147, 50);
+            this.button27.TabIndex = 6;
+            this.button27.Text = "Редактировать";
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // Delete_TypeUbutton26
+            // 
+            this.Delete_TypeUbutton26.Location = new System.Drawing.Point(95, 202);
+            this.Delete_TypeUbutton26.Name = "Delete_TypeUbutton26";
+            this.Delete_TypeUbutton26.Size = new System.Drawing.Size(147, 50);
+            this.Delete_TypeUbutton26.TabIndex = 5;
+            this.Delete_TypeUbutton26.Text = "Удалить";
+            this.Delete_TypeUbutton26.UseVisualStyleBackColor = true;
+            this.Delete_TypeUbutton26.Click += new System.EventHandler(this.Delete_TypeUbutton26_Click);
             // 
             // button1
             // 
@@ -1495,6 +1632,24 @@ namespace BD
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Тип населенного пункта";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(98, 270);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(147, 50);
+            this.button29.TabIndex = 7;
+            this.button29.Text = "Редактировать";
+            this.button29.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(98, 183);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(147, 50);
+            this.button28.TabIndex = 6;
+            this.button28.Text = "Удалить";
+            this.button28.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -1530,6 +1685,24 @@ namespace BD
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Улица";
             this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(92, 293);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(142, 51);
+            this.button31.TabIndex = 8;
+            this.button31.Text = "Редактировать";
+            this.button31.UseVisualStyleBackColor = true;
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(92, 219);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(142, 51);
+            this.button30.TabIndex = 7;
+            this.button30.Text = "Удалить";
+            this.button30.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -1573,6 +1746,25 @@ namespace BD
             this.tabPage14.TabIndex = 3;
             this.tabPage14.Text = "Населенный пункт";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(110, 276);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(119, 43);
+            this.button33.TabIndex = 9;
+            this.button33.Text = "Редактировать";
+            this.button33.UseVisualStyleBackColor = true;
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(110, 207);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(119, 43);
+            this.button32.TabIndex = 8;
+            this.button32.Text = "Удалить";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // comboBox4
             // 
@@ -1624,6 +1816,24 @@ namespace BD
             this.tabPage17.TabIndex = 4;
             this.tabPage17.Text = "Адрес";
             this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // button35
+            // 
+            this.button35.Location = new System.Drawing.Point(199, 277);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(129, 48);
+            this.button35.TabIndex = 19;
+            this.button35.Text = "Редактировать";
+            this.button35.UseVisualStyleBackColor = true;
+            // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(23, 277);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(129, 48);
+            this.button34.TabIndex = 18;
+            this.button34.Text = "Удалить";
+            this.button34.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -1750,60 +1960,6 @@ namespace BD
             this.динамикаИзмененияСтоимостиToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.динамикаИзмененияСтоимостиToolStripMenuItem.Text = "Динамика изменения стоимости";
             // 
-            // tabPage18
-            // 
-            this.tabPage18.Controls.Add(this.button37);
-            this.tabPage18.Controls.Add(this.button36);
-            this.tabPage18.Controls.Add(this.label23);
-            this.tabPage18.Controls.Add(this.Add);
-            this.tabPage18.Controls.Add(this.ItemCB);
-            this.tabPage18.Controls.Add(this.PriceListCB);
-            this.tabPage18.Controls.Add(this.addPriceListDG);
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(806, 411);
-            this.tabPage18.TabIndex = 5;
-            this.tabPage18.Text = "Заполнение Прайс-листа";
-            this.tabPage18.UseVisualStyleBackColor = true;
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(106, 122);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(130, 46);
-            this.Add.TabIndex = 3;
-            this.Add.Text = "Добавить";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // ItemCB
-            // 
-            this.ItemCB.FormattingEnabled = true;
-            this.ItemCB.Location = new System.Drawing.Point(180, 64);
-            this.ItemCB.Name = "ItemCB";
-            this.ItemCB.Size = new System.Drawing.Size(121, 21);
-            this.ItemCB.TabIndex = 2;
-            // 
-            // PriceListCB
-            // 
-            this.PriceListCB.FormattingEnabled = true;
-            this.PriceListCB.Location = new System.Drawing.Point(180, 37);
-            this.PriceListCB.Name = "PriceListCB";
-            this.PriceListCB.Size = new System.Drawing.Size(121, 21);
-            this.PriceListCB.TabIndex = 1;
-            // 
-            // addPriceListDG
-            // 
-            this.addPriceListDG.AllowUserToAddRows = false;
-            this.addPriceListDG.AllowUserToDeleteRows = false;
-            this.addPriceListDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.addPriceListDG.Location = new System.Drawing.Point(342, 6);
-            this.addPriceListDG.Name = "addPriceListDG";
-            this.addPriceListDG.ReadOnly = true;
-            this.addPriceListDG.Size = new System.Drawing.Size(458, 399);
-            this.addPriceListDG.TabIndex = 0;
-            // 
             // dataGridViewListReturner
             // 
             this.dataGridViewListReturner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1819,161 +1975,6 @@ namespace BD
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(495, 18);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(191, 18);
-            this.label21.TabIndex = 34;
-            this.label21.Text = "Сведения о виде товар";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(17, 126);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(149, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Дата создания прайс-листа";
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(112, 238);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(107, 46);
-            this.button24.TabIndex = 11;
-            this.button24.Text = "Удалить";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(112, 315);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(107, 46);
-            this.button25.TabIndex = 12;
-            this.button25.Text = "Редактировать";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // Delete_TypeUbutton26
-            // 
-            this.Delete_TypeUbutton26.Location = new System.Drawing.Point(95, 202);
-            this.Delete_TypeUbutton26.Name = "Delete_TypeUbutton26";
-            this.Delete_TypeUbutton26.Size = new System.Drawing.Size(147, 50);
-            this.Delete_TypeUbutton26.TabIndex = 5;
-            this.Delete_TypeUbutton26.Text = "Удалить";
-            this.Delete_TypeUbutton26.UseVisualStyleBackColor = true;
-            this.Delete_TypeUbutton26.Click += new System.EventHandler(this.Delete_TypeUbutton26_Click);
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(95, 284);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(147, 50);
-            this.button27.TabIndex = 6;
-            this.button27.Text = "Редактировать";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(98, 183);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(147, 50);
-            this.button28.TabIndex = 6;
-            this.button28.Text = "Удалить";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(98, 270);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(147, 50);
-            this.button29.TabIndex = 7;
-            this.button29.Text = "Редактировать";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(92, 219);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(142, 51);
-            this.button30.TabIndex = 7;
-            this.button30.Text = "Удалить";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(92, 293);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(142, 51);
-            this.button31.TabIndex = 8;
-            this.button31.Text = "Редактировать";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(110, 207);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(119, 43);
-            this.button32.TabIndex = 8;
-            this.button32.Text = "Удалить";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(110, 276);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(119, 43);
-            this.button33.TabIndex = 9;
-            this.button33.Text = "Редактировать";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // button34
-            // 
-            this.button34.Location = new System.Drawing.Point(23, 277);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(129, 48);
-            this.button34.TabIndex = 18;
-            this.button34.Text = "Удалить";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(199, 277);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(129, 48);
-            this.button35.TabIndex = 19;
-            this.button35.Text = "Редактировать";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 40);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(148, 13);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Наименование прайс листа";
-            // 
-            // button36
-            // 
-            this.button36.Location = new System.Drawing.Point(106, 201);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(130, 46);
-            this.button36.TabIndex = 5;
-            this.button36.Text = "Удалить";
-            this.button36.UseVisualStyleBackColor = true;
-            // 
-            // button37
-            // 
-            this.button37.Location = new System.Drawing.Point(106, 282);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(130, 46);
-            this.button37.TabIndex = 6;
-            this.button37.Text = "Изменить";
-            this.button37.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2010,11 +2011,14 @@ namespace BD
             ((System.ComponentModel.ISupportInitialize)(this.вид_товараDataGridView)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.список_товараDataGridView)).EndInit();
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTypeU)).EndInit();
             this.tabControl4.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
@@ -2030,9 +2034,6 @@ namespace BD
             this.tabPage12.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage18.ResumeLayout(false);
-            this.tabPage18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addPriceListDG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
@@ -2075,7 +2076,7 @@ namespace BD
         private System.Windows.Forms.TextBox наименование_прайс_листаTextBox;
         private System.Windows.Forms.TextBox артикулTextBox;
         private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewTypeU;
         private System.Windows.Forms.TabControl tabControl4;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Button button1;
