@@ -82,6 +82,14 @@ namespace BD
             вид_товараDataGridView.DataSource = dB.ReturnTable("*", "Вид_товара", null).Tables[0].DefaultView;
             addPriceListDG.DataSource = dB.PriceListItems().Tables[0].DefaultView;
             dataGridView1.DataSource = dB.ReturnTable("*", "Прайс_лист", null).Tables[0].DefaultView;
+            switch (tabControl4.SelectedIndex)
+            {
+                case 0: dataGridView2.DataSource = dB.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
+                case 1: dataGridView2.DataSource = dB.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+                case 2: dataGridView2.DataSource = dB.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
+                case 3: dataGridView2.DataSource = dB.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
+                case 4: dataGridView2.DataSource = dB.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
+            }
         }
 
         void ComboUpdates()
@@ -600,7 +608,18 @@ namespace BD
             TableUpdate(); ComboUpdates();
         }
 
-        
+        private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            switch (tabControl4.SelectedIndex) 
+            {
+                case 0: dataGridView2.DataSource = db.ReturnTable("*", "Тип_улицы", null).Tables[0].DefaultView; break;
+                case 1: dataGridView2.DataSource = db.ReturnTable("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+                case 2: dataGridView2.DataSource = db.ReturnTable("*", "Улица", null).Tables[0].DefaultView; break;
+                case 3: dataGridView2.DataSource = db.ReturnTable("*", "[Населенный пункт]", null).Tables[0].DefaultView; break;
+                case 4: dataGridView2.DataSource = db.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
+            }
+        }
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

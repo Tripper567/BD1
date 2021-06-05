@@ -560,7 +560,6 @@ namespace BD
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(814, 437);
             this.tabControl1.TabIndex = 3;
-
             // 
             // tabPage1
             // 
@@ -1355,6 +1354,7 @@ namespace BD
             this.tabControl4.SelectedIndex = 0;
             this.tabControl4.Size = new System.Drawing.Size(354, 402);
             this.tabControl4.TabIndex = 0;
+            this.tabControl4.SelectedIndexChanged += new System.EventHandler(this.tabControl4_SelectedIndexChanged);
             // 
             // tabPage10
             // 
