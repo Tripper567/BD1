@@ -639,7 +639,7 @@ namespace BD
         private void button32_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
+            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[1].Value));
             TableUpdate(); ComboUpdates();
         }
 
