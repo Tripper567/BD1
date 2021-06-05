@@ -701,7 +701,7 @@ namespace BD
                 "Товар, Вид_товара, Заказы, [Товары и заказы]",
                 "WHERE Товар.Код_товара = [Товары и заказы].Код_товара " +
                 "AND Заказы.Код_заказа = [Товары и заказы].Код_заказа " +
-                $"AND Вид_товара.Код_вида_товара = {GetDirCode("Вид_товара", textBox1.Text, 1)} " +
+                $"AND Вид_товара.Код_вида_товара =  Товар.Код_вида_товара " +
                 $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap2From.Value)}' " +
                 $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap2To.Value)}'").Tables[0].DefaultView;
         }
