@@ -247,7 +247,8 @@ namespace BD
                артикулTextBox1.Text,
                GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1).ToString(),
                GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1).ToString(),
-               стоимостьTextBox.Text
+               стоимостьTextBox.Text,
+               Convert.ToInt32(количествоtextBox1.Text)
                );
         }
 

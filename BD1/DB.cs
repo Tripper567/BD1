@@ -30,9 +30,9 @@ namespace BD
             return Tmp;
         }
 
-        public void AddTovar(string Name, string Article, string FactoryCode, string Kind, string Value)
+        public void AddTovar(string Name, string Article, string FactoryCode, string Kind, string Value, int kol)
         {
-            SqlCommand comment = new SqlCommand($"INSERT INTO Товар (Наименование_товара, Артикул, Код_предприятия, Код_вида_товара, Стоимость) VALUES ( '{Name}', '{Article}', {FactoryCode}, {Kind}, {Value})", connection);
+            SqlCommand comment = new SqlCommand($"INSERT INTO Товар (Наименование_товара, Артикул, Код_предприятия, Код_вида_товара, Стоимость, Количество) VALUES ( '{Name}', '{Article}', {FactoryCode}, {Kind}, {Value}, {kol})", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
