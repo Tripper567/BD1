@@ -531,12 +531,16 @@ namespace BD
         private void button21_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
+            
             if (tempID != -1)
             {
+                int prId = GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1);
+                int vidID = GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1);
+
                 db.updateTovar(tempID, наименование_товараTextBox.Text,
-               артикулTextBox1.Text,
-               (GetDirCode("Предприятия", предпритиеCB.SelectedItem.ToString(), 1)).ToString(),
-               (GetDirCode("Вид_товара", вид_товараCB.SelectedItem.ToString(), 1)).ToString(),
+                артикулTextBox1.Text,
+                prId.ToString(),
+                vidID.ToString(),
                стоимостьTextBox.Text);
                 tempID = -1;
             }
