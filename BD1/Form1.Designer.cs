@@ -123,6 +123,7 @@ namespace BD
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.количествоtextBox1 = new System.Windows.Forms.TextBox();
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.вид_товараCB = new System.Windows.Forms.ComboBox();
@@ -211,7 +212,12 @@ namespace BD
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.количествоtextBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
+            this.dataGridViewZap2 = new System.Windows.Forms.DataGridView();
+            this.dateTimePickerZap2To = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerZap2From = new System.Windows.Forms.DateTimePicker();
+            this.buttonZap2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -285,6 +291,8 @@ namespace BD
             ((System.ComponentModel.ISupportInitialize)(this.gridZapros1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZap2)).BeginInit();
             this.SuspendLayout();
             // 
             // наименование_заказаLabel
@@ -585,6 +593,15 @@ namespace BD
             label17.Text = "ИНН";
             label17.Click += new System.EventHandler(this.label17_Click);
             // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new System.Drawing.Point(23, 209);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(69, 13);
+            label24.TabIndex = 21;
+            label24.Text = "Количество:";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -594,6 +611,7 @@ namespace BD
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage19);
+            this.tabControl1.Controls.Add(this.tabPage22);
             this.tabControl1.Location = new System.Drawing.Point(2, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1209,6 +1227,13 @@ namespace BD
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Товар";
             this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // количествоtextBox1
+            // 
+            this.количествоtextBox1.Location = new System.Drawing.Point(153, 206);
+            this.количествоtextBox1.Name = "количествоtextBox1";
+            this.количествоtextBox1.Size = new System.Drawing.Size(121, 20);
+            this.количествоtextBox1.TabIndex = 22;
             // 
             // button21
             // 
@@ -2074,21 +2099,59 @@ namespace BD
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
             // 
-            // label24
+            // tabPage22
             // 
-            label24.AutoSize = true;
-            label24.Location = new System.Drawing.Point(23, 209);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(69, 13);
-            label24.TabIndex = 21;
-            label24.Text = "Количество:";
+            this.tabPage22.Controls.Add(this.textBox1);
+            this.tabPage22.Controls.Add(this.buttonZap2);
+            this.tabPage22.Controls.Add(this.dateTimePickerZap2To);
+            this.tabPage22.Controls.Add(this.dateTimePickerZap2From);
+            this.tabPage22.Controls.Add(this.dataGridViewZap2);
+            this.tabPage22.Location = new System.Drawing.Point(4, 22);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage22.Size = new System.Drawing.Size(806, 411);
+            this.tabPage22.TabIndex = 7;
+            this.tabPage22.Text = "tabPage22";
+            this.tabPage22.UseVisualStyleBackColor = true;
             // 
-            // количествоtextBox1
+            // dataGridViewZap2
             // 
-            this.количествоtextBox1.Location = new System.Drawing.Point(153, 206);
-            this.количествоtextBox1.Name = "количествоtextBox1";
-            this.количествоtextBox1.Size = new System.Drawing.Size(121, 20);
-            this.количествоtextBox1.TabIndex = 22;
+            this.dataGridViewZap2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewZap2.Location = new System.Drawing.Point(250, 6);
+            this.dataGridViewZap2.Name = "dataGridViewZap2";
+            this.dataGridViewZap2.Size = new System.Drawing.Size(550, 399);
+            this.dataGridViewZap2.TabIndex = 0;
+            // 
+            // dateTimePickerZap2To
+            // 
+            this.dateTimePickerZap2To.Location = new System.Drawing.Point(6, 32);
+            this.dateTimePickerZap2To.Name = "dateTimePickerZap2To";
+            this.dateTimePickerZap2To.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerZap2To.TabIndex = 4;
+            // 
+            // dateTimePickerZap2From
+            // 
+            this.dateTimePickerZap2From.Location = new System.Drawing.Point(6, 6);
+            this.dateTimePickerZap2From.Name = "dateTimePickerZap2From";
+            this.dateTimePickerZap2From.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerZap2From.TabIndex = 3;
+            // 
+            // buttonZap2
+            // 
+            this.buttonZap2.Location = new System.Drawing.Point(6, 382);
+            this.buttonZap2.Name = "buttonZap2";
+            this.buttonZap2.Size = new System.Drawing.Size(238, 23);
+            this.buttonZap2.TabIndex = 5;
+            this.buttonZap2.Text = "button26";
+            this.buttonZap2.UseVisualStyleBackColor = true;
+            this.buttonZap2.Click += new System.EventHandler(this.buttonZap2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -2154,6 +2217,9 @@ namespace BD
             ((System.ComponentModel.ISupportInitialize)(this.gridZapros1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage22.ResumeLayout(false);
+            this.tabPage22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZap2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2309,6 +2375,12 @@ namespace BD
         private System.Windows.Forms.TabPage tabPage21;
         private System.Windows.Forms.Button buttonZap1;
         private System.Windows.Forms.TextBox количествоtextBox1;
+        private System.Windows.Forms.TabPage tabPage22;
+        private System.Windows.Forms.Button buttonZap2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerZap2To;
+        private System.Windows.Forms.DateTimePicker dateTimePickerZap2From;
+        private System.Windows.Forms.DataGridView dataGridViewZap2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

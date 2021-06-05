@@ -693,6 +693,19 @@ namespace BD
                 $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap2.Value)}'").Tables[0].DefaultView;
         }
 
+        private void buttonZap2_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            dataGridViewZap2.DataSource = db.ReturnTable(
+                "Товар.Наименование_товара, Вид_товара.Наименование_вида, Товар.Стоимость", 
+                "Товар, Вид_товара, Заказы, [Товары и заказы]",
+                "WHERE Товар.Код_товара = [Товары и заказы].Код_товара " +
+                "AND Заказы.Код_заказа = [Товары и заказы].Код_заказа " +
+                $"AND Вид_товара.Код_вида_товара = {GetDirCode("Вид_товара", textBox1.Text, 1)} " +
+                $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap2From.Value)}' " +
+                $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap2To.Value)}'").Tables[0].DefaultView;
+        }
+
         string GetSQLFormatDate(DateTime Date)
         {
             string Temp = string.Empty;
