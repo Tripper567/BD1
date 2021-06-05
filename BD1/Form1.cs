@@ -638,9 +638,7 @@ namespace BD
 
         private void button32_Click(object sender, EventArgs e)
         {
-            DB db = new DB(Credentials);
-            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[1].Value));
-            TableUpdate(); ComboUpdates();
+
         }
 
         private void button27_Click(object sender, EventArgs e)
@@ -659,7 +657,9 @@ namespace BD
 
         private void button31_Click(object sender, EventArgs e)
         {
-
+            DB db = new DB(Credentials);
+            db.updateU(названиеTextBox.Text, GetDirCode("Тип_улицы", comboBox3.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[1].Value));
+            TableUpdate(); ComboUpdates();
         }
 
         private void физические_лицаDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
