@@ -685,8 +685,8 @@ namespace BD
                 "WHERE [Товары и заказы].Код_товара = Товар.Код_товара " +
                 "AND [Товары и заказы].Код_заказа = Заказы.Код_заказа " +
                 "AND (Заказы.код_физического_лица = Физические_лица.Код_физического_лица OR Заказы.код_юридического_лица = Юридические_лица.Код_юридического_лица) " +
-                $"AND Заказы.Дата_заказа > {GetSQLFormatDate(dateTimePickerZap1.Value)} " +
-                $"AND Заказы.Дата_заказа < {GetSQLFormatDate(dateTimePickerZap2.Value)}").Tables[0].DefaultView;
+                $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap1.Value)}' " +
+                $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap2.Value)}'").Tables[0].DefaultView;
         }
 
         string GetSQLFormatDate(DateTime Date)
