@@ -356,7 +356,7 @@ namespace BD
             db.AddOrders(
                наименование_заказаTextBox.Text,
                 fizFaceID,
-                GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
+                GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString() == null ? null : код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
                 dateTimePicker1.Value,
                 GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                 );
