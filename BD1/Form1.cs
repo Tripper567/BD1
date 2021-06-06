@@ -64,7 +64,7 @@ namespace BD
         string Credentials =
           $"Server = {Program.Server};" +
           $"Integrated security = {Program.Secure};" +
-          $"database = {Program.Server}";
+          $"database = {Program.DBLog};";
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
