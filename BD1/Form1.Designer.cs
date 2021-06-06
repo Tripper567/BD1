@@ -197,11 +197,6 @@ namespace BD
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.sqlTB = new System.Windows.Forms.TextBox();
             this.sqlEXECBTN = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.динамикаИзмененияСтоимостиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage20 = new System.Windows.Forms.TabPage();
@@ -210,14 +205,14 @@ namespace BD
             this.dateTimePickerZap1 = new System.Windows.Forms.DateTimePicker();
             this.gridZapros1 = new System.Windows.Forms.DataGridView();
             this.tabPage21 = new System.Windows.Forms.TabPage();
-            this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage22 = new System.Windows.Forms.TabPage();
-            this.dataGridViewZap2 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonZap2 = new System.Windows.Forms.Button();
             this.dateTimePickerZap2To = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerZap2From = new System.Windows.Forms.DateTimePicker();
-            this.buttonZap2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridViewZap2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -284,15 +279,14 @@ namespace BD
             this.tabPage14.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.tabPage12.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabPage19.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridZapros1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZap2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // наименование_заказаLabel
@@ -1685,6 +1679,7 @@ namespace BD
             this.button29.TabIndex = 7;
             this.button29.Text = "Редактировать";
             this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // button28
             // 
@@ -1694,6 +1689,7 @@ namespace BD
             this.button28.TabIndex = 6;
             this.button28.Text = "Удалить";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button2
             // 
@@ -1801,6 +1797,7 @@ namespace BD
             this.button33.TabIndex = 9;
             this.button33.Text = "Редактировать";
             this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // button32
             // 
@@ -1941,7 +1938,6 @@ namespace BD
             // 
             this.tabPage12.Controls.Add(this.sqlTB);
             this.tabPage12.Controls.Add(this.sqlEXECBTN);
-            this.tabPage12.Controls.Add(this.menuStrip1);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
@@ -1952,7 +1948,7 @@ namespace BD
             // 
             // sqlTB
             // 
-            this.sqlTB.Location = new System.Drawing.Point(6, 201);
+            this.sqlTB.Location = new System.Drawing.Point(6, 49);
             this.sqlTB.Multiline = true;
             this.sqlTB.Name = "sqlTB";
             this.sqlTB.Size = new System.Drawing.Size(786, 118);
@@ -1960,51 +1956,13 @@ namespace BD
             // 
             // sqlEXECBTN
             // 
-            this.sqlEXECBTN.Location = new System.Drawing.Point(334, 343);
+            this.sqlEXECBTN.Location = new System.Drawing.Point(306, 242);
             this.sqlEXECBTN.Name = "sqlEXECBTN";
             this.sqlEXECBTN.Size = new System.Drawing.Size(139, 40);
             this.sqlEXECBTN.TabIndex = 1;
             this.sqlEXECBTN.Text = "Выполнить";
             this.sqlEXECBTN.UseVisualStyleBackColor = true;
             this.sqlEXECBTN.Click += new System.EventHandler(this.sqlEXECBTN_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // списокКлиентовНаЗаданнуюДатуToolStripMenuItem
-            // 
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.списокТоваровToolStripMenuItem,
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1,
-            this.динамикаИзмененияСтоимостиToolStripMenuItem});
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem.Name = "списокКлиентовНаЗаданнуюДатуToolStripMenuItem";
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem.Text = "Действия";
-            // 
-            // списокТоваровToolStripMenuItem
-            // 
-            this.списокТоваровToolStripMenuItem.Name = "списокТоваровToolStripMenuItem";
-            this.списокТоваровToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.списокТоваровToolStripMenuItem.Text = "Список товаров на заданную дату";
-            // 
-            // списокКлиентовНаЗаданнуюДатуToolStripMenuItem1
-            // 
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1.Name = "списокКлиентовНаЗаданнуюДатуToolStripMenuItem1";
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1.Size = new System.Drawing.Size(267, 22);
-            this.списокКлиентовНаЗаданнуюДатуToolStripMenuItem1.Text = "Список клиентов на заданную дату";
-            // 
-            // динамикаИзмененияСтоимостиToolStripMenuItem
-            // 
-            this.динамикаИзмененияСтоимостиToolStripMenuItem.Name = "динамикаИзмененияСтоимостиToolStripMenuItem";
-            this.динамикаИзмененияСтоимостиToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.динамикаИзмененияСтоимостиToolStripMenuItem.Text = "Динамика изменения стоимости";
             // 
             // tabPage19
             // 
@@ -2014,7 +1972,7 @@ namespace BD
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage19.Size = new System.Drawing.Size(806, 411);
             this.tabPage19.TabIndex = 6;
-            this.tabPage19.Text = "Запросы2";
+            this.tabPage19.Text = "Запрос 1";
             this.tabPage19.UseVisualStyleBackColor = true;
             // 
             // tabControl5
@@ -2043,24 +2001,24 @@ namespace BD
             // 
             // buttonZap1
             // 
-            this.buttonZap1.Location = new System.Drawing.Point(6, 344);
+            this.buttonZap1.Location = new System.Drawing.Point(6, 279);
             this.buttonZap1.Name = "buttonZap1";
-            this.buttonZap1.Size = new System.Drawing.Size(242, 23);
+            this.buttonZap1.Size = new System.Drawing.Size(242, 50);
             this.buttonZap1.TabIndex = 3;
-            this.buttonZap1.Text = "button26";
+            this.buttonZap1.Text = "Выполнить";
             this.buttonZap1.UseVisualStyleBackColor = true;
             this.buttonZap1.Click += new System.EventHandler(this.buttonZap1_Click);
             // 
             // dateTimePickerZap2
             // 
-            this.dateTimePickerZap2.Location = new System.Drawing.Point(6, 32);
+            this.dateTimePickerZap2.Location = new System.Drawing.Point(24, 78);
             this.dateTimePickerZap2.Name = "dateTimePickerZap2";
             this.dateTimePickerZap2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerZap2.TabIndex = 2;
             // 
             // dateTimePickerZap1
             // 
-            this.dateTimePickerZap1.Location = new System.Drawing.Point(6, 6);
+            this.dateTimePickerZap1.Location = new System.Drawing.Point(24, 52);
             this.dateTimePickerZap1.Name = "dateTimePickerZap1";
             this.dateTimePickerZap1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerZap1.TabIndex = 1;
@@ -2083,6 +2041,60 @@ namespace BD
             this.tabPage21.Text = "tabPage21";
             this.tabPage21.UseVisualStyleBackColor = true;
             // 
+            // tabPage22
+            // 
+            this.tabPage22.Controls.Add(this.textBox1);
+            this.tabPage22.Controls.Add(this.buttonZap2);
+            this.tabPage22.Controls.Add(this.dateTimePickerZap2To);
+            this.tabPage22.Controls.Add(this.dateTimePickerZap2From);
+            this.tabPage22.Controls.Add(this.dataGridViewZap2);
+            this.tabPage22.Location = new System.Drawing.Point(4, 22);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage22.Size = new System.Drawing.Size(806, 411);
+            this.tabPage22.TabIndex = 7;
+            this.tabPage22.Text = "Запрос 2";
+            this.tabPage22.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 117);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // buttonZap2
+            // 
+            this.buttonZap2.Location = new System.Drawing.Point(3, 256);
+            this.buttonZap2.Name = "buttonZap2";
+            this.buttonZap2.Size = new System.Drawing.Size(241, 56);
+            this.buttonZap2.TabIndex = 5;
+            this.buttonZap2.Text = "Выполнить";
+            this.buttonZap2.UseVisualStyleBackColor = true;
+            this.buttonZap2.Click += new System.EventHandler(this.buttonZap2_Click);
+            // 
+            // dateTimePickerZap2To
+            // 
+            this.dateTimePickerZap2To.Location = new System.Drawing.Point(21, 91);
+            this.dateTimePickerZap2To.Name = "dateTimePickerZap2To";
+            this.dateTimePickerZap2To.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerZap2To.TabIndex = 4;
+            // 
+            // dateTimePickerZap2From
+            // 
+            this.dateTimePickerZap2From.Location = new System.Drawing.Point(21, 65);
+            this.dateTimePickerZap2From.Name = "dateTimePickerZap2From";
+            this.dateTimePickerZap2From.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerZap2From.TabIndex = 3;
+            // 
+            // dataGridViewZap2
+            // 
+            this.dataGridViewZap2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewZap2.Location = new System.Drawing.Point(250, 6);
+            this.dataGridViewZap2.Name = "dataGridViewZap2";
+            this.dataGridViewZap2.Size = new System.Drawing.Size(550, 399);
+            this.dataGridViewZap2.TabIndex = 0;
+            // 
             // dataGridViewListReturner
             // 
             this.dataGridViewListReturner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -2098,60 +2110,6 @@ namespace BD
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
-            // 
-            // tabPage22
-            // 
-            this.tabPage22.Controls.Add(this.textBox1);
-            this.tabPage22.Controls.Add(this.buttonZap2);
-            this.tabPage22.Controls.Add(this.dateTimePickerZap2To);
-            this.tabPage22.Controls.Add(this.dateTimePickerZap2From);
-            this.tabPage22.Controls.Add(this.dataGridViewZap2);
-            this.tabPage22.Location = new System.Drawing.Point(4, 22);
-            this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage22.Size = new System.Drawing.Size(806, 411);
-            this.tabPage22.TabIndex = 7;
-            this.tabPage22.Text = "tabPage22";
-            this.tabPage22.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewZap2
-            // 
-            this.dataGridViewZap2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewZap2.Location = new System.Drawing.Point(250, 6);
-            this.dataGridViewZap2.Name = "dataGridViewZap2";
-            this.dataGridViewZap2.Size = new System.Drawing.Size(550, 399);
-            this.dataGridViewZap2.TabIndex = 0;
-            // 
-            // dateTimePickerZap2To
-            // 
-            this.dateTimePickerZap2To.Location = new System.Drawing.Point(6, 32);
-            this.dateTimePickerZap2To.Name = "dateTimePickerZap2To";
-            this.dateTimePickerZap2To.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerZap2To.TabIndex = 4;
-            // 
-            // dateTimePickerZap2From
-            // 
-            this.dateTimePickerZap2From.Location = new System.Drawing.Point(6, 6);
-            this.dateTimePickerZap2From.Name = "dateTimePickerZap2From";
-            this.dateTimePickerZap2From.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerZap2From.TabIndex = 3;
-            // 
-            // buttonZap2
-            // 
-            this.buttonZap2.Location = new System.Drawing.Point(6, 382);
-            this.buttonZap2.Name = "buttonZap2";
-            this.buttonZap2.Size = new System.Drawing.Size(238, 23);
-            this.buttonZap2.TabIndex = 5;
-            this.buttonZap2.Text = "button26";
-            this.buttonZap2.UseVisualStyleBackColor = true;
-            this.buttonZap2.Click += new System.EventHandler(this.buttonZap2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -2209,17 +2167,15 @@ namespace BD
             this.tabPage17.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage19.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridZapros1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage22.ResumeLayout(false);
             this.tabPage22.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZap2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2285,11 +2241,6 @@ namespace BD
         private System.Windows.Forms.TextBox корпусTextBox;
         private System.Windows.Forms.TextBox квартираTextBox;
         private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem списокКлиентовНаЗаданнуюДатуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокТоваровToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокКлиентовНаЗаданнуюДатуToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem динамикаИзмененияСтоимостиToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewListReturner;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button8;

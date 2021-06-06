@@ -639,7 +639,9 @@ namespace BD
 
         private void button32_Click(object sender, EventArgs e)
         {
-
+            DB db = new DB(Credentials);
+            db.deleteLocal(Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
+            TableUpdate(); ComboUpdates();
         }
 
         private void button27_Click(object sender, EventArgs e)
@@ -704,6 +706,27 @@ namespace BD
                 $"AND Вид_товара.Код_вида_товара =  Товар.Код_вида_товара " +
                 $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap2From.Value)}' " +
                 $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap2To.Value)}'").Tables[0].DefaultView;
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            db.DeleteTypeLocality(Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            db.updateLocality(название_типа_нас_пунктаTextBox.Text, Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            db.updateLocal(названиеTextBox1.Text, GetDirCode("Тип_населенного_пункта", comboBox4.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
+            TableUpdate(); ComboUpdates();
         }
 
         string GetSQLFormatDate(DateTime Date)

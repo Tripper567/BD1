@@ -161,6 +161,14 @@ namespace BD
             connection.Close();
         }
 
+        public void DeleteTypeLocality(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Тип_населенного_пункта where Код_типа_нас_пункта = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public void DeleteZak(int id)
         {
             SqlCommand comment = new SqlCommand($"DELETE FROM Заказы where Код_заказа = {id}", connection);
@@ -295,9 +303,24 @@ namespace BD
             connection.Close();
         }
 
+        public void updateLocality(string Type, int Key)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE Тип_населенного_пункта SET Название_типа_нас_пункта = '{Type}' WHERE Код_типа_нас_пункта = {Key}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
         public void deleteU(int id)
         {
             SqlCommand comment = new SqlCommand($"DELETE FROM Улица WHERE Код_улицы = {id}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void deleteLocal(int id)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM [Населенный пункт] WHERE Код_населенного_пункта = {id}", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
@@ -311,5 +334,12 @@ namespace BD
             connection.Close();
         }
 
+        public void updateLocal(string Name, int Type, int Key)
+        {
+            SqlCommand comment = new SqlCommand($"UPDATE [Населенный пункт] SET Название = '{Name}', Код_типа_нас_пункта = {Type} WHERE Код_населенного_пункта = {Key}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
