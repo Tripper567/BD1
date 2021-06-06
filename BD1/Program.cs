@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace BD1
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -17,7 +17,12 @@ namespace BD1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form2());
         }
+
+        public static string Server;
+        public static string Secure;
+        public static string DBLog;
+
     }
 }

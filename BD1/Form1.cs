@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using BD1;
 using System.Windows.Forms;
 
 namespace BD
@@ -62,9 +62,9 @@ namespace BD
         }
 
         string Credentials =
-          "Server = localhost;" +
-          "Integrated security = SSPI;" +
-          "database = BD";
+          $"Server = {Program.Server};" +
+          $"Integrated security = {Program.Secure};" +
+          $"database = {Program.Server}";
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
