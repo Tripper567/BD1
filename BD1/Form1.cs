@@ -353,19 +353,44 @@ namespace BD
         private void button10_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
-            int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
-            dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
-            string fizFaceID;
-            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL")
+            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL" && код_юридического_лицаCB.SelectedItem.ToString() != "NULL")
+            {
+                int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
+                dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
+                string fizFaceID;
                 fizFaceID = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
-            else fizFaceID = null;
-            db.AddOrders(
-               наименование_заказаTextBox.Text,
-                fizFaceID,
-                GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
-                dateTimePicker1.Value,
-                GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
-                );
+
+                db.AddOrders(
+                   наименование_заказаTextBox.Text,
+                    fizFaceID,
+                    GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
+                    dateTimePicker1.Value,
+                    GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
+                    );
+            }
+            if(код_физического_лицаCB.SelectedItem.ToString() == "NULL" && код_юридического_лицаCB.SelectedItem.ToString() != "NULl")
+            {
+                db.AddOrders1(
+                   наименование_заказаTextBox.Text,
+                    GetDirCode("Юридические_лица", код_юридического_лицаCB.SelectedItem.ToString(), 1).ToString(),
+                    dateTimePicker1.Value,
+                    GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
+                    );
+            }
+            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL" && код_юридического_лицаCB.SelectedItem.ToString() == "NULl")
+            {
+                int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
+                dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
+                string fizFaceID;
+                fizFaceID = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+                db.AddOrders2(
+                   наименование_заказаTextBox.Text,
+                    fizFaceID,
+                    dateTimePicker1.Value,
+                    GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
+                    );
+            }
+
             TableUpdate(); ComboUpdates();
         }
 
