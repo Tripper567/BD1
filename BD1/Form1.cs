@@ -368,7 +368,7 @@ namespace BD
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
             }
-            if(код_физического_лицаCB.SelectedItem.ToString() == "NULL" && код_юридического_лицаCB.SelectedItem.ToString() != "NULl")
+            if(код_физического_лицаCB.SelectedItem.ToString() == "NULL" && код_юридического_лицаCB.SelectedItem.ToString() != "NULL")
             {
                 db.AddOrders1(
                    наименование_заказаTextBox.Text,
@@ -377,7 +377,7 @@ namespace BD
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
             }
-            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL" && код_юридического_лицаCB.SelectedItem.ToString() == "NULl")
+            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL" && код_юридического_лицаCB.SelectedItem.ToString() == "NULL")
             {
                 int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
                 dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
