@@ -213,6 +213,7 @@ namespace BD
             this.dataGridViewZap2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label25 = new System.Windows.Forms.Label();
             наименование_заказаLabel = new System.Windows.Forms.Label();
             код_физического_лицаLabel1 = new System.Windows.Forms.Label();
             код_юридического_лицаLabel1 = new System.Windows.Forms.Label();
@@ -1402,6 +1403,7 @@ namespace BD
             // 
             // tabPage18
             // 
+            this.tabPage18.Controls.Add(this.label25);
             this.tabPage18.Controls.Add(this.button37);
             this.tabPage18.Controls.Add(this.button36);
             this.tabPage18.Controls.Add(this.label23);
@@ -1434,6 +1436,7 @@ namespace BD
             this.button36.TabIndex = 5;
             this.button36.Text = "Удалить";
             this.button36.UseVisualStyleBackColor = true;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
             // label23
             // 
@@ -2111,6 +2114,15 @@ namespace BD
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 5;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 67);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(121, 13);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "Наименование товара";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2332,6 +2344,7 @@ namespace BD
         private System.Windows.Forms.DateTimePicker dateTimePickerZap2From;
         private System.Windows.Forms.DataGridView dataGridViewZap2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label25;
     }
 }
 

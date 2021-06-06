@@ -108,7 +108,9 @@ namespace BD
             ItemCB.Items.Clear();
             orderPriceListCB.Items.Clear();
             код_физического_лицаCB.Items.Clear();
+            код_физического_лицаCB.Items.Add("NULL");
             код_юридического_лицаCB.Items.Clear();
+            код_юридического_лицаCB.Items.Add("NULL");
 
             foreach (string i in BufferListUpdate(0))
             {
@@ -353,7 +355,10 @@ namespace BD
             DB db = new DB(Credentials);
             int passID = GetDirCode("[Паспортные данные]", код_физического_лицаCB.SelectedItem.ToString(), 1);
             dataGridViewListReturner.DataSource = db.ReturnTable("Код_физического_лица", "[Паспортные_данные и Физ_лица]", $"WHERE Код_паспортных_данных = {passID}").Tables[0].DefaultView;
-            string fizFaceID = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            string fizFaceID;
+            if (код_физического_лицаCB.SelectedItem.ToString() != "NULL")
+                fizFaceID = dataGridViewListReturner.Rows[0].Cells[0].Value.ToString();
+            else fizFaceID = null;
             db.AddOrders(
                наименование_заказаTextBox.Text,
                 fizFaceID,
@@ -727,6 +732,11 @@ namespace BD
             DB db = new DB(Credentials);
             db.updateLocal(названиеTextBox1.Text, GetDirCode("Тип_населенного_пункта", comboBox4.SelectedItem.ToString(), 1), Convert.ToInt32(dataGridViewTypeU.SelectedRows[0].Cells[0].Value));
             TableUpdate(); ComboUpdates();
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            
         }
 
         string GetSQLFormatDate(DateTime Date)

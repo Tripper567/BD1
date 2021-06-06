@@ -112,6 +112,20 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
+        public void AddOrders1(string name,string codeLegal, DateTime dataZ, int PriceListID)
+        {
+            SqlCommand comment = new SqlCommand($"INSERT INTO Заказы (Наименование_заказа, код_юридического_лица, Дата_заказа, Код_прайс_листа) VALUES ( '{name}','{codeLegal}','{dataZ}', {PriceListID})", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void AddOrders2(string name, string codeF, DateTime dataZ, int PriceListID)
+        {
+            SqlCommand comment = new SqlCommand($"INSERT INTO Заказы (Наименование_заказа, код_физического_лица, Дата_заказа, Код_прайс_листа) VALUES ( '{name}', '{codeF}','{dataZ}', {PriceListID})", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
 
         public void AddEnterprises(string nameEnterprises, string surname, string name, string otchestvo, string phoneSecretary, string mail, string phoneLeader)
         {
@@ -167,6 +181,11 @@ namespace BD
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public void DeleteZapPriceL(int id)
+        {
+            
         }
 
         public void DeleteZak(int id)
