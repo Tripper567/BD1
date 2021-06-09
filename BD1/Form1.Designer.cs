@@ -63,9 +63,9 @@ namespace BD
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label17;
             System.Windows.Forms.Label label24;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -1242,6 +1242,7 @@ namespace BD
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Товар";
             this.tabPage16.UseVisualStyleBackColor = true;
+            this.tabPage16.Click += new System.EventHandler(this.tabPage16_Click);
             // 
             // количествоtextBox1
             // 
@@ -2145,16 +2146,16 @@ namespace BD
             // 
             // chartZap3
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartZap3.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartZap3.Legends.Add(legend3);
+            chartArea4.Name = "ChartArea1";
+            this.chartZap3.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartZap3.Legends.Add(legend4);
             this.chartZap3.Location = new System.Drawing.Point(291, 6);
             this.chartZap3.Name = "chartZap3";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartZap3.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartZap3.Series.Add(series4);
             this.chartZap3.Size = new System.Drawing.Size(509, 399);
             this.chartZap3.TabIndex = 4;
             this.chartZap3.Text = "chart1";

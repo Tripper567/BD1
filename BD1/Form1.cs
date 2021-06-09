@@ -251,6 +251,7 @@ namespace BD
                стоимостьTextBox.Text,
                Convert.ToInt32(количествоtextBox1.Text)
                );
+            TableUpdate(); ComboUpdates();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -822,6 +823,11 @@ namespace BD
             addPriceListDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             PriceListCB.Text = addPriceListDG.Rows[e.RowIndex].Cells[1].Value.ToString();
             ItemCB.Text = addPriceListDG.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void tabPage16_Click(object sender, EventArgs e)
+        {
+
         }
 
         string GetSQLFormatDate(DateTime Date)
