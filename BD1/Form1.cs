@@ -764,6 +764,18 @@ namespace BD
             
         }
 
+        private void buttonZap3_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            dataGridViewZap3.DataSource = db.ReturnTable(
+                "Товар.Наименование_товара, Товар.Стоимость, Заказы.Дата_заказа", 
+                "Товар, Заказы, [Товары и заказы]",
+                "WHERE Товар.Код_товара = [Товары и заказы].Код_товара " +
+                "AND Заказы.Код_заказа = [Товары и заказы].Код_заказа " +
+                $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap3From.Value)}' " +
+                $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap3To.Value)}'").Tables[0].DefaultView;
+        }
+
         string GetSQLFormatDate(DateTime Date)
         {
             string Temp = string.Empty;
