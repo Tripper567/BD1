@@ -390,5 +390,13 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void deleteFromPriceList1(int x)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Прайс_лист WHERE Код_прайс_листа = {x}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

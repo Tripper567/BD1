@@ -830,6 +830,23 @@ namespace BD
 
         }
 
+        private void button24_Click(object sender, EventArgs e)
+        {
+            DB db = new DB(Credentials);
+            if (tempID != -1)
+            {
+                db.deleteFromPriceList1(tempID); tempID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tempID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            
+        }
+
         string GetSQLFormatDate(DateTime Date)
         {
             string Temp = string.Empty;
