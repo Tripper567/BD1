@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BD1;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace BD
 {
@@ -764,9 +765,30 @@ namespace BD
             
         }
 
+        string[] Months = new string[12]
+{
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+};
+
         private void buttonZap3_Click(object sender, EventArgs e)
         {
             DB db = new DB(Credentials);
+            chartZap3.Series.Clear();
+            chartZap3.Series.Add(new Series("Series")
+            {
+                ChartType = SeriesChartType.Column
+            });
             dataGridViewZap3.DataSource = db.ReturnTable(
                 "Товар.Наименование_товара, Товар.Стоимость, Заказы.Дата_заказа", 
                 "Товар, Заказы, [Товары и заказы]",
@@ -774,6 +796,21 @@ namespace BD
                 "AND Заказы.Код_заказа = [Товары и заказы].Код_заказа " +
                 $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap3From.Value)}' " +
                 $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap3To.Value)}'").Tables[0].DefaultView;
+            int TempCount = 0;
+            double CalcYear;
+            for (int i = 0; i < Math.Abs(dateTimePickerZap3From.Value.Year - dateTimePickerZap3To.Value.Year) * 12; i++)
+            {
+                CalcYear = dateTimePickerZap3From.Value.Year + Math.Round((double)(i / 12));
+                for (int j = 0; j < dataGridViewZap3.Rows.Count - 1; j++)
+                {
+                    if (CalcYear == Convert.ToDateTime(dataGridViewZap3.Rows[j].Cells[2].Value).Year && Convert.ToDateTime(dataGridViewZap3.Rows[j].Cells[2].Value).Month == ((i % 12) + 1))
+                    {
+                        TempCount += Convert.ToInt32(dataGridViewZap3.Rows[j].Cells[1].Value);
+                    }
+                }
+                chartZap3.Series["Series"].Points.AddXY($"{Months[i % 12]} {CalcYear}", TempCount);
+                TempCount = 0;
+            }
         }
 
         string GetSQLFormatDate(DateTime Date)
