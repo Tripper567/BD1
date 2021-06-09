@@ -21,6 +21,21 @@ namespace BD
             adapter.Fill(Tmp);
             return Tmp;
         }
+        public DataSet ReturnOrderedItems(int priceListID, int orderID)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Товар.Код_товара FROM Товар, Заказы, Список_товара, Прайс_лист WHERE Заказы.Код_заказа = {orderID} AND Заказы.Код_прайс_листа = Прайс_лист.Код_прайс_листа AND [Список товара].Код_прайс_листа = Прайс_лист.Код_прайс_листа AND Товар.Код_товара = [Список товара].Код_товара", connection);
+            DataSet Tmp = new DataSet();
+            adapter.Fill(Tmp);
+            return Tmp;
+        }
+
+        public DataSet ReturnOrderedItemName(int id)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Наименование_товара FROM Товар WHERE Код_товара = {id}", connection);
+            DataSet Tmp = new DataSet();
+            adapter.Fill(Tmp);
+            return Tmp;
+        }
 
         public DataSet ReturnFizFaceLastName(int id)
         {

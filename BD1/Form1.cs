@@ -367,6 +367,17 @@ namespace BD
                     dateTimePicker1.Value,
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
+                List<int> itemCodes = new List<int>();
+                dataGridViewListReturner.DataSource = db.ReturnOrderedItems(GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1), GetDirCode("Заказы", наименование_заказаTextBox.Text, 1)).Tables[0].DefaultView;
+                for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                {
+                    itemCodes.Add(Convert.ToInt32(dataGridViewListReturner.Rows[i].Cells[0]));
+                }
+                foreach (int i in itemCodes)
+                {
+                    dataGridViewListReturner.DataSource = db.ReturnOrderedItemName(i).Tables[0].DefaultView;
+                    dataGridView2.Rows.Add(наименование_заказаTextBox.Text, dataGridViewListReturner.Rows[0].Cells[0].Value.ToString());
+                }
             }
             if(код_физического_лицаCB.SelectedItem.ToString() == "NULL" && код_юридического_лицаCB.SelectedItem.ToString() != "NULL")
             {
@@ -376,6 +387,17 @@ namespace BD
                     dateTimePicker1.Value,
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
+                List<int> itemCodes = new List<int>();
+                dataGridViewListReturner.DataSource = db.ReturnOrderedItems(GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1), GetDirCode("Заказы", наименование_заказаTextBox.Text, 1)).Tables[0].DefaultView;
+                for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                {
+                    itemCodes.Add(Convert.ToInt32(dataGridViewListReturner.Rows[i].Cells[0]));
+                }
+                foreach (int i in itemCodes)
+                {
+                    dataGridViewListReturner.DataSource = db.ReturnOrderedItemName(i).Tables[0].DefaultView;
+                    dataGridView2.Rows.Add(наименование_заказаTextBox.Text, dataGridViewListReturner.Rows[0].Cells[0].Value.ToString());
+                }
             }
             if (код_физического_лицаCB.SelectedItem.ToString() != "NULL" && код_юридического_лицаCB.SelectedItem.ToString() == "NULL")
             {
@@ -390,9 +412,17 @@ namespace BD
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
 
-                db.TovarIZak(
-                    GetDirCode()
-                    );
+                List<int> itemCodes = new List<int>();
+                dataGridViewListReturner.DataSource = db.ReturnOrderedItems(GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1), GetDirCode("Заказы", наименование_заказаTextBox.Text, 1)).Tables[0].DefaultView;
+                for(int i = 0; i < dataGridViewListReturner.Rows.Count-1; i++)
+                {
+                    itemCodes.Add(Convert.ToInt32(dataGridViewListReturner.Rows[i].Cells[0]));
+                }
+                foreach(int i in itemCodes)
+                {
+                    dataGridViewListReturner.DataSource = db.ReturnOrderedItemName(i).Tables[0].DefaultView;
+                    dataGridView2.Rows.Add(наименование_заказаTextBox.Text, dataGridViewListReturner.Rows[0].Cells[0].Value.ToString());
+                }
             }
 
             TableUpdate(); ComboUpdates();
