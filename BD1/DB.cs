@@ -21,6 +21,21 @@ namespace BD
             adapter.Fill(Tmp);
             return Tmp;
         }
+        public DataSet ReturnOrderedItems(int priceListID, int orderID)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Товар.Код_товара FROM Товар, Заказы, Список_товара, Прайс_лист WHERE Заказы.Код_заказа = {orderID} AND Заказы.Код_прайс_листа = Прайс_лист.Код_прайс_листа AND [Список товара].Код_прайс_листа = Прайс_лист.Код_прайс_листа AND Товар.Код_товара = [Список товара].Код_товара", connection);
+            DataSet Tmp = new DataSet();
+            adapter.Fill(Tmp);
+            return Tmp;
+        }
+
+        public DataSet ReturnOrderedItemName(int id)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Наименование_товара FROM Товар WHERE Код_товара = {id}", connection);
+            DataSet Tmp = new DataSet();
+            adapter.Fill(Tmp);
+            return Tmp;
+        }
 
         public DataSet ReturnFizFaceLastName(int id)
         {
@@ -356,6 +371,29 @@ namespace BD
         public void updateLocal(string Name, int Type, int Key)
         {
             SqlCommand comment = new SqlCommand($"UPDATE [Населенный пункт] SET Название = '{Name}', Код_типа_нас_пункта = {Type} WHERE Код_населенного_пункта = {Key}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void TovarIZak(int x, int y)
+        {
+            SqlCommand comment = new SqlCommand($"INSERT INTO [Товары и заказы] (Код_товара, Код_заказа) VALUES {x},{y}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void deleteFromPriceList(int x)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM [Список товара] WHERE Код_товара = {x}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void deleteFromPriceList1(int x)
+        {
+            SqlCommand comment = new SqlCommand($"DELETE FROM Прайс_лист WHERE Код_прайс_листа = {x}", connection);
             connection.Open();
             comment.ExecuteNonQuery();
             connection.Close();
