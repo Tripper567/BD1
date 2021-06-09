@@ -389,6 +389,10 @@ namespace BD
                     dateTimePicker1.Value,
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
+
+                db.TovarIZak(
+                    GetDirCode()
+                    );
             }
 
             TableUpdate(); ComboUpdates();

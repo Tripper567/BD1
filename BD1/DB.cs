@@ -360,5 +360,12 @@ namespace BD
             comment.ExecuteNonQuery();
             connection.Close();
         }
+        public void TovarIZak(int x, int y)
+        {
+            SqlCommand comment = new SqlCommand($"INSERT INTO [Товары и заказы] (Код_товара, Код_заказа) VALUES {x},{y}", connection);
+            connection.Open();
+            comment.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
