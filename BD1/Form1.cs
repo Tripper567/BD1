@@ -91,7 +91,6 @@ namespace BD
                 case 4: dataGridViewTypeU.DataSource = dB.ReturnTable("*", "Адрес", null).Tables[0].DefaultView; break;
             }
             список_товараDataGridView.DataSource = dB.ReturnTable("Наименование_прайс_листа, Наименование_товара", "[Список товара], Прайс_лист, Товар", "WHERE [Список товара].Код_товара = Товар.Код_товара AND [Список товара].Код_прайс_листа = Прайс_лист.Код_прайс_листа").Tables[0].DefaultView;
-
         }
 
         void ComboUpdates()
@@ -367,6 +366,7 @@ namespace BD
                     dateTimePicker1.Value,
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
+
                 List<int> itemCodes = new List<int>();
                 dataGridViewListReturner.DataSource = db.ReturnOrderedItems(GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1), GetDirCode("Заказы", наименование_заказаTextBox.Text, 1)).Tables[0].DefaultView;
                 for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
@@ -387,6 +387,7 @@ namespace BD
                     dateTimePicker1.Value,
                     GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1)
                     );
+
                 List<int> itemCodes = new List<int>();
                 dataGridViewListReturner.DataSource = db.ReturnOrderedItems(GetDirCode("Прайс_лист", orderPriceListCB.SelectedItem.ToString(), 1), GetDirCode("Заказы", наименование_заказаTextBox.Text, 1)).Tables[0].DefaultView;
                 for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
@@ -795,7 +796,13 @@ namespace BD
 
         private void button36_Click(object sender, EventArgs e)
         {
-            
+            DB db = new DB(Credentials);
+            tempID = GetDirCode("Товар", ItemCB.Text, 1);
+            if (tempID != -1) 
+            {
+                db.deleteFromPriceList(tempID); tempID = -1;                    
+            }
+            TableUpdate(); ComboUpdates();
         }
 
         private void buttonZap3_Click(object sender, EventArgs e)
@@ -808,6 +815,13 @@ namespace BD
                 "AND Заказы.Код_заказа = [Товары и заказы].Код_заказа " +
                 $"AND Заказы.Дата_заказа > '{GetSQLFormatDate(dateTimePickerZap3From.Value)}' " +
                 $"AND Заказы.Дата_заказа < '{GetSQLFormatDate(dateTimePickerZap3To.Value)}'").Tables[0].DefaultView;
+        }
+
+        private void addPriceListDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            addPriceListDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            PriceListCB.Text = addPriceListDG.Rows[e.RowIndex].Cells[1].Value.ToString();
+            ItemCB.Text = addPriceListDG.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         string GetSQLFormatDate(DateTime Date)
